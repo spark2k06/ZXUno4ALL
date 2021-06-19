@@ -2,12 +2,12 @@
 
 License is Creative Commons by SA.
 
-![alt text](/render/ZXUnCore.png "ZXUnCore")
+![alt text](./render/ZXUnCore.png "ZXUnCore")
 
 PINOUT
 ------
 
-![alt text](/doc/PINOUT.png "ZXUnCore")
+![alt text](./doc/PINOUT.png "ZXUnCore")
 
 
 Spanish
