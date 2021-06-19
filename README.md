@@ -7,13 +7,13 @@ Todos los ficheros correspondientes a ZXUno4ALL compartidos en este repositorio 
 
 La principal idea de ZXUno4ALL es facilitar y poner al alcance de cualquiera los desarrollos de cores y software creado para el ZXUno, mediante el uso de diferentes formatos de backplanes que hacen uso del modulo principal ZXUnCore. Dadas las carecterísticas de éste, es posible crear proyectos derivados que no guarden relación con el ZXUno.
 
-Cores desarrollados para ZXUno:
-
-https://github.com/zxdos/zxuno
-
 Proyecto original ZXUno:
 
 http://zxuno.speccy.org/
+
+Cores desarrollados para ZXUno:
+
+https://github.com/zxdos/zxuno
 
 English
 -------
