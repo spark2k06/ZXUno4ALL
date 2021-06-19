@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ZXUnCore)(type Legacy)(uri ${KIPRJMOD}/ZXUnCore.lib)(options "")(descr ""))
+)
