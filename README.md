@@ -22,7 +22,7 @@ All the files corresponding to ZXUno4ALL shared in this repository are licensed 
 
 The main idea of ZXUno4ALL is to facilitate and make available to anyone the development of cores and software created for the ZXUno, through the use of different backplane formats that make use of the main module ZXUnCore. Given its characteristics, it is possible to create derivative projects that are not related to the ZXUno.
 
-ZXUno Home Page
+ZXUno Home Page:
 
 http://zxuno.speccy.org/
 
