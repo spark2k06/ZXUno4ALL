@@ -1,4 +1,5 @@
-Core de Spectrum
+Spectrum Core
+-------------
 
 License is Creative Commons by SA.
 
