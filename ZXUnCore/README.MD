@@ -4,8 +4,8 @@ License is Creative Commons by SA.
 
 ![alt text](./render/ZXUnCore.png "ZXUnCore")
 
-PINOUT
-------
+PINOUT ZXUNO RGB666
+-------------------
 
 ![alt text](./doc/PINOUT.png "ZXUnCore")
 
