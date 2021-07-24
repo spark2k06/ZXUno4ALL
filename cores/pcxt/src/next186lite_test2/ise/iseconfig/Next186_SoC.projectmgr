@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="Next186_SoC" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/DSP32 |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|DSP32.v</ClosedNode>
+         <ClosedNode>/DSP32 |home|nestor|Projects|next186mp3|HW|DSP32.v</ClosedNode>
+         <ClosedNode>/PapilioPro_Next186Soc |home|nestor|Projects|next186mp3|HW|PapilioProMain.v/sys_inst - system/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/PapilioPro_Next186Soc |home|nestor|Projects|next186mp3|HW|PapilioProMain.v/sys_inst - system/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/PapilioPro_Next186Soc |home|nestor|Projects|next186mp3|HW|PapilioProMain.v/sys_inst - system/cache_ctl - cache_controller</ClosedNode>
+         <ClosedNode>/PapilioPro_Next186Soc |home|nestor|Projects|next186mp3|HW|PapilioProMain.v/sys_inst - system/timer - timer_8253</ClosedNode>
+         <ClosedNode>/ZXUnCore_Next186lite_2MB D:|Cosas|FPGA|ZXUno|PCXT|next186lite_test1 - LIMPIO|HW|ZXUnCore_2MB_Main.v/sys_inst - system_2MB</ClosedNode>
+         <ClosedNode>/ZXUnCore_Next186lite_512KB D:|Cosas|FPGA|ZXUno|PCXT|next186lite_test1 - LIMPIO|HW|ZXUnCore_512KB_Main.v/sys_inst - system_512KB</ClosedNode>
+         <ClosedNode>/gameblaster |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|gameblaster.v</ClosedNode>
+         <ClosedNode>/gameblaster |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|gameblaster.v</ClosedNode>
+         <ClosedNode>/psg - rtl |home|nestor|Projects|fpga|zxuno|zxuno_next186lite_2MB|HW|psg|psg.vhd</ClosedNode>
+         <ClosedNode>/saa1099 |home|nestor|Projects|zrtech|zrtech_next186mp3|HW|saa1099.v</ClosedNode>
+         <ClosedNode>/system_2MB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|sram_2MB_186.v</ClosedNode>
+         <ClosedNode>/system_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|system_512KB.v</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|zrtechMain.v/sys_inst - system/CPUUnit - unit186/cpu - Next186_CPU</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|zrtechMain.v/sys_inst - system/DSP32_inst - DSP32</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|zrtechMain.v/sys_inst - system/gameblaster_inst - gameblaster</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|fpga|zrtech_next186bramvideo|HW|zrtechMain.v/sys_inst - system/sound_gen - soundwave</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|zrtech|zrtech_next186mp3|HW|zrtechMain.v/sys_inst - system/gameblaster_inst - gameblaster</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|zrtech|zrtech_next186mp3|HW|zrtechMain.v/sys_inst - system/gameblaster_inst - gameblaster/saa1099_inst_1 - saa1099</ClosedNode>
+         <ClosedNode>/zrtech_Next186Soc |home|nestor|Projects|zrtech|zrtech_next186mp3|HW|zrtechMain.v/sys_inst - system/gameblaster_inst - gameblaster/saa1099_inst_2 - saa1099</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite_2MB|HW|zxunoMain.v/sys_inst - system/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite_2MB|HW|zxunoMain.v/sys_inst - system/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite_2MB|HW|zxunoMain.v/sys_inst - system/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite_2MB|HW|zxunoMain.v/sys_inst - system/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxunoMain.v/sys_inst - system/tandy - psg - rtl</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxunoMain.v/sys_inst - system/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_EXT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512k_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186sram16bit|HW|zxunoMain.v/sys_inst - system/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186sram16bit|HW|zxunoMain.v/sys_inst - system/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186sram16bit|HW|zxunoMain.v/sys_inst - system/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186Soc |home|nestor|Projects|fpga|zxuno|zxuno_next186sram16bit|HW|zxunoMain.v/sys_inst - system/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|next186lite_test1|HW|zxuno_2MB_EXT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB/cache_ctl - cache_controller_2MB</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_EXT_Main.v/sys_inst - system_2MB/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_EXT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|next186lite_test1|HW|zxuno_2MB_INT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB/cache_ctl - cache_controller_2MB</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2MB_INT_Main.v/sys_inst - system_2MB/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2MB_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_EXT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_EXT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_EXT_Main.v/sys_inst - system</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxunoMain.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system/cache_ctl - cache_controller_lat</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_2M_INT |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_2M_INT_Main.v/sys_inst - system/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|next186lite_test1|HW|zxuno_512KB_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB/CPUUnit - unit186</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB/KB_Mouse - KB_Mouse_8042</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB/cache_ctl - cache_controller_lat</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB/dac - VGA_DAC</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512KB_Main.v/sys_inst - system_512KB/timer - timer_8253</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512k_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB_ZXUnCore D:|Cosas|FPGA|ZXUno|PCXT|next186lite_test1|HW|zxuno_512KB_ZXUnCore_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512k |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512k_Main.v/sys_inst - system</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512kb |home|nestor|Projects|fpga|zxuno|zxuno_next186lite|HW|zxuno_512k_Main.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>ZXUnCore_Next186lite_2MB (D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/ZXUnCore_2MB_Main.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000016e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000016e0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>ZXUnCore_Next186lite_2MB (D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/ZXUnCore_2MB_Main.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000240000000010000000100000000000000000000000064ffffffff000000810000000000000001000002400000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000364000000040101000100000000000000000000000064ffffffff000000810000000000000004000001550000000100000000000001290000000100000000000000820000000100000000000000640000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>BRAM_15Kx32_2MB.xco</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Implement Design/Map</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Translate</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000022f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000022f0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000001ef0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000001530000011b01000000040100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000240000000010000000100000000000000000000000064ffffffff000000810000000000000001000002400000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <CopyAdditionalFiles/>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000001ef0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/zxuno_Next186lite_2MB_ZXUnCore D:|Cosas|FPGA|ZXUno|PCXT|next186lite_test1|HW|zxuno_2MB_ZXUnCore_Main.v</ClosedNode>
+         <ClosedNode>/zxuno_Next186lite_512KB_ZXUnCore D:|Cosas|FPGA|ZXUno|PCXT|next186lite_test1|HW|zxuno_512KB_ZXUnCore_Main.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b8000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b80000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000240000000010000000100000000000000000000000064ffffffff000000810000000000000001000002400000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+</Project>

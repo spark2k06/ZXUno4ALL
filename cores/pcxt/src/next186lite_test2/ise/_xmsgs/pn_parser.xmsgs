@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/KB_8042.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/Next186/Next186_ALU.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/Next186/Next186_BIU_2T_delayread.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/Next186/Next186_CPU.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/Next186/Next186_Regs.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/PIC_8259.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/ZXUnCore_2MB_Main.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/ZXUnCore_512KB_Main.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/cache_controller_2MB.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/cache_controller_512KB.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/soundwave.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/sram.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/system_2MB.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/system_512KB.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/timer8253.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/unit186.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/Cosas/FPGA/ZXUno/PCXT/next186lite_test1 - LIMPIO/HW/vga.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

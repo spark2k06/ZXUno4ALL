@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/nestor/Projects/fpga/zxuno/zxuno_next186lite/ise/zxuno_Next186lite_2MB_INT.ncd
+OUTFILE=/home/nestor/Projects/fpga/zxuno/zxuno_next186lite/ise/zxuno_Next186lite_2MB_INT.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/nestor/Projects/fpga/zxuno/zxuno_next186lite/ise
+LICENSE=WebPack
+USER_INFO=211086823_0_0_417
