@@ -7,7 +7,7 @@ License is Creative Commons by SA.
 PINOUT (ZXUNO RGB666) / GRAPHICS GREMLIN
 ----------------------------------------
 
-![alt text](./doc/PINOUT2.png "ZXUnCore")
+![alt text](./doc/PINOUT3.png "ZXUnCore")
 
 
 Spanish
