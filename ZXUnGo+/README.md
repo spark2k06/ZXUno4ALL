@@ -1,3 +1,3 @@
 # ZXUnGo+
 
-![alt text](./render/ZXUnGo+.png "ZXUnGo+")
+![alt text](./render/ZXUnGo.png "ZXUnGo")
