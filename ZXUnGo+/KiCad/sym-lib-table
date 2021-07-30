@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name zxungo+)(type Legacy)(uri ${KIPRJMOD}/zxungo+.lib)(options "")(descr ""))
+)
