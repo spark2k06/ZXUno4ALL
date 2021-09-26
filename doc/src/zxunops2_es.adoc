@@ -1,0 +1,313 @@
+== Modos de teclado
+
+Por defecto, está configurado en modo ZX Spectrum. Para cambiar a otro modo, se debe pulsar `Caps Shift+Symbol Shift+F`, luego `U`, y finalmente la tecla correspondiente. Al hacerlo, se tecleará automáticamente un texto indicando el modo seleccionado (por ejemplo: `.zx` si se pulsa `Caps Shift+Symbol Shift+F`, `U`, y luego `1`).
+
+[align="center",width="40%",%header,cols=2*]
+|===
+|Modo
+|Tecla
+|ZX Spectrum
+|`1`
+|Amstrad CPC
+|`2`
+|MSX
+|`3`
+|Commodore 64
+|`4`
+|Atari 800XL
+|`5`
+|BBC Micro
+|`6`
+|Acorn Electron
+|`7`
+|Apple (I y II)
+|`8`
+|Commodore VIC 20
+|`9`
+|PC XT
+|`0`
+|Oric Atmos
+|`A`
+|SAM Coupé
+|`B`
+|Jupiter ACE
+|`C`
+|ZX81
+|`D`
+|Commodore 16 / Plus 4
+|`E`
+|HT-1080Z / Video Genie / TRS-80 Model I G – Galaksija
+|`F`
+|Galaksija
+|`G`
+|Multicomp
+|`H`
+|ZX80
+|`I`
+|Atom
+|`J`
+|Commodore PET
+|`K`
+|Colour Genie
+|`L`
+|Lynx
+|`M`
+|Enterprise
+|`N`
+|===
+
+<<<
+
+El modo de teclado ZX puede funcionar de dos formas distintas, entre las que se puede alternar usando `Caps Shift+Symbol Shift+F` y luego `D`:
+
+- En modo convencional, con acceso a `Caps Shift` y `Symbol Shift` originales del teclado pero sin acceso a las teclas especiales ni a las teclas modificadoras.
+- En modo completo, sin acceso a `Caps Shift` y `Symbol Shift` originales del teclado pero con acceso a las teclas especiales y a las teclas modificadoras, como el resto de modos de teclado.
+
+La distribución del teclado, en general (salvo en modo `ZX` convencional), con la pulsación asociada al combinar junto con `Caps Shift+Symbol Shift` (en modo completo), se puede resumir según el siguiente esquema:
+
+[align="center",width="80%",cols=10*]
+|===
+^|**1**
+^|**2**
+^|**3**
+^|**4**
+^|**5**
+^|**6**
+^|**7**
+^|**8**
+^|**9**
+^|**0**
+^|`F1`
+^|`F2`
+^|`F3`
+^|`F4`
+^|`F5`
+^|`F6`
+^|`F7`
+^|`F8`
+^|`F9`
+^|`F10`
+^|**Q**
+^|**W**
+^|**E**
+^|**R**
+^|**T**
+^|**Y**
+^|**U**
+^|**I**
+^|**O**
+^|**P**
+^|`F11`
+^|`F12`
+^|`*`
+^|`-`
+^|`Impr. Pant`
+^|`Bloq. Desp`
+^|`Pausa`
+^|`Bloq. Mayús.`
+^|`([ y ^)`
+^|`+ (* y ])`
+^|**A**
+^|**S**
+^|**D**
+^|**F**
+^|**G**
+^|**H**
+^|**J**
+^|**K**
+^|**L**
+^|**Enter**
+^|`Mayús.`
+^|`< y >`
+^|`+`
+^|
+^|`Ins.`
+^|`Inicio`
+^|`Re Pág`
+^|`Ñ`
+^|`´ ({ y ¨)`
+^|`ç (})`
+^|**CShift**
+^|**Z**
+^|**X**
+^|**C**
+^|**V**
+^|**B**
+^|**N**
+^|**M**
+^|**SShift**
+^|**Space**
+^|
+^|`Ctrl`
+^|`Win`
+^|`Alt`
+^|`Supr`
+^|`Fin`
+^|`Av Pág`
+^|`Alt Gr`
+^|
+^|
+|===
+
+[TIP]
+====
+Al pulsar una combinación de tecla modificadora con otra (por ej. `Mayús.+F10`), no es necesario soltar `Caps Shift+Symbol Shift` entre pulsaciones (en el ejemplo anterior, `Caps Shift+Symbol Shift+A`, y `Caps Shift+Symbol Shift+0`).
+====
+
+[TIP]
+====
+Pulsar `Caps Shift+Symbol Shift+F`, luego `U`, y una tecla no válida, teclea automáticamente el texto indicando el modo actual.
+====
+
+[NOTE]
+====
+Se puede obtener el código fuente, binarios y más instrucciones sobre el firmware de teclado en https://github.com/spark2k06/zxunops2/tree/master/Alternative[el repositorio oficial].
+====
+
+[TIP]
+====
+La combinación `Caps Shift+Symbol Shift+I` se comporta de forma diferente en los siguientes modos:
+
+- Commodore 16 y VIC-20: `Bloq. Num`
+- Commodore Pet: Tecla `Menu` (derecha de `Alt Gr`), que se utiliza como `Bloq Mayús`
+====
+
+[CAUTION]
+====
+No se recomienda usar el modo de teclado `PC XT`, a la vez que un teclado de PS/2
+====
+
+<<<
+
+== Funciones
+
+Pulsar `Caps Shift+Symbol Shift+F` y luego una tecla asociada, permite activar una serie de funciones especiales.
+
+La lista completa de funciones (y el modo en que se pueden utilizar) es la siguiente:
+
+[align="center",width="100%",%header,cols="1,10,3"]
+|===
+|Tecla
+|Acción
+|Teclados compatibles
+|V
+|Imprime versión
+|Todos
+|X
+|Guarda configuración en EEPROM
+|Todos
+|B
+|`Ctrl+Alt+Bcksp` (Hard Reset)
+|Todos
+|N
+|`Ctrl+Alt+Supr` (Soft Reset)
+|Todos
+|Y
+|`Ctrl+Alt+F5` (NMI)
+|ZX, CPC, Jupiter, SAM, ZX80, ZX81
+|O
+|`F12` seguido de `Mayús` con pausa de 1 seg.
+|BBC
+|H
+|`F8+F10`
+|Atari
+|U
+|Cambio de modo de teclado
+|Todos
+|C
+|Mapeo de las teclas `O`, `P`, `Q`, `A` a bloque numérico (Atari) o cursores
+|PC, MSX, SMS y Atari
+|D
+|Activa y desactiva el modo completo en teclado ZX
+|ZX
+|G
+|Cambiar el modo de vídeo
+|ZX, Atari, BBC, VIC, ORIC y HT-1080Z
+|===
+
+La función `C` activa o desactiva el mapeo de los cursores a `O`, `P`, `Q`, `A` y la tecla `M` se intercambia con la `Espacio`. Funciona en todos los tipos de teclado, excepto:
+
+- Teclados C64 y Atari 800XL: en lugar de los cursores, se mapean a las teclas `8`, `4`, `6` y `2` del teclado numérico, y la `M` a la `0` (disparo)
+- Teclado Jupiter ACE: en lugar de los cursores se mapea a las teclas `8`, `4`, `6` y `2` del teclado numérico, y la `M` y 'Espacio' se intercambian.
+
+En todos los modos de teclado se ha intentado que coincidan la mayoría de los símbolos con los que hay impresos en el teclado de Spectrum. Así `Symbol Shit+M` obtiene “.” o `Symbol Shift+K` obtiene `+`. Incluso en algunos se han sustituido algunos símbolos cuando eran más prácticos. Por ejemplo en el teclado MSX Español versión 1.3 la combinación `Symbol Shift+E` obtiene “¡” y `Symbol Shift+I` obtiene “¿”.
+
+<<<
+
+== Actualización de firmware
+
+Para poder instalar el firmware, se  necesita un ordenador (Windows, Mac, Linux).
+
+
+*Material necesario*:
+
+- Ordenador (Windows, Mac, Linux)
+- 6 https://es.wikipedia.org/wiki/Cable_puente[cables puente para prototipos] (idealmente, hembra en los dos extremos)
+- Adaptador USB Serie (FTDI)
+
+[.text-center]
+image:./img/ftdi_usb.jpg[pdfwidth=30%]
+
+*Software necesario*:
+
+- https://github.com/binaryupdates/xLoader[XLoader] (sólo para Windows) o https://www.nongnu.org/avrdude/[AVRDUDE] (es posible utilizar la versión incluida con el entorno https://www.arduino.cc/en/software[Arduino IDE]).
+- Fichero `.hex` binario con la versión a instalar, que se puede obtener en https://github.com/spark2k06/zxunops2/tree/master/Alternative/binaries[el repositorio oficial] (normalmente, el fichero deseado es uno de los teminados en `-328.hex`).
+
+<<<
+
+*Preparación*
+
+Desconectar la placa Arduino (si fuera necesario), e identificar sus conexiones.
+
+[.text-center]
+image:./img/arduinominipro.jpg[pdfwidth=30%]
+
+Conectar el adaptador serie con la placa Arduino, de la siguiente forma:
+
+[%header,cols=2*]
+|===
+|USB FTDI
+|Arduino Mini
+|`DTR`
+|`DTR`
+|`RX`
+|`TXO`
+|`TX`
+|`RXI`
+|`VCC` (3.3V)
+|`VCC`
+|`CTS`
+|`GND`
+|`GND`
+|`GND`
+|===
+
+Conectar el adaptador USB al ordenador, e identificar el puerto donde se ha conectado (`COM`, `/dev/usb...`, etc.).
+
+<<<
+
+=== xLoader
+
+Seleccionar los siguientes parámetros:
+
+- Device: Duemilanove/Nano (ATMega328)
+- Baud rate: 57600
+- Port: Puerto COM correspondiente al adaptador
+
+Pulsar "Upload" y esperar a que se muestre el mensaje "xx bytes uploaded".
+
+=== AVRDUDE
+
+Usar un comando de la forma:
+
+[source,shell]
+----
+avrdude -U flash:w:<fichero.hex>:i -e -p atmega328p -b 57600 -c arduino -P <puerto USB>
+----
+
+[TIP]
+====
+En el caso de utilizar la versión de `avrdude` incluida con Arduino IDE, se debe indicar también el fichero `.conf` incluido. Por ejemplo, en MacOS:
+
+`/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude -U flash:w:zxunops2-25092021-328.hex:i -e -p atmega328p -b 57600 -c arduino -P /dev/cu.usbserial-A50285BI -C /Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf`
+====	
