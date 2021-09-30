@@ -282,6 +282,11 @@ Conectar el adaptador serie con la placa Arduino, de la siguiente forma:
 |`GND`
 |===
 
+[TIP]
+====
+Si la placa arduino utiliza 5V, se puede realizar la conexión con ese voltaje en vez de 3,3V
+====
+
 Conectar el adaptador USB al ordenador, e identificar el puerto donde se ha conectado (`COM`, `/dev/usb...`, etc.).
 
 <<<

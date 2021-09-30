@@ -270,6 +270,11 @@ Plug the serial adapter with the Arduino board, using this guide:
 |`GND`
 |===
 
+[TIP]
+====
+If the arduino board uses 5V for power, you can make also the connection using that instead of 3.3V
+====
+
 Plug the USB adapter to the computer, and find out the connected port (`COM`, `/dev/usb...`, etc.).
 
 <<<

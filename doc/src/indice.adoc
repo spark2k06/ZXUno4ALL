@@ -1,6 +1,6 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.0.0
+:revnumber: 1.0.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -24,7 +24,7 @@ Con el paso del tiempo, el proyecto ZX-Uno ha ido creciendo, de forma que es pos
 
 La página oficial de ZX-Uno es https://zxuno.speccy.org.
 
-La principal idea de ZXUno4ALL es facilitar y poner al alcance de cualquiera los desarrollos de cores y software creado para el ZX-Uno, mediante el uso de diferentes formatos de backplanes que hacen uso del modulo principal <<ZXUnCore,ZXUnCore>>. Dadas las carecterísticas de éste, es posible crear proyectos derivados que no guarden relación con el ZX-Uno. Este manual está principalmente orientado al uso de <<ZXUnGo+,ZXUnGo+>> o <<ZXUnSugarless,ZXUnSugarless>>, junto con <<ZXUnCore,ZXUnCore>>.
+La principal idea de ZXUno4ALL es facilitar y poner al alcance de cualquiera los desarrollos de cores y software creado para el ZX-Uno, mediante el uso de diferentes formatos de backplanes que hacen uso del modulo principal <<ZXUnCore,ZXUnCore>>. Dadas las carecterísticas de éste, es posible crear proyectos derivados que no guarden relación con el ZX-Uno. Este manual está principalmente orientado al uso de <<ZXUnGo+,ZXUnGo+>> o ZXUnSugarless, junto con <<ZXUnCore,ZXUnCore>>.
 
 En este documento, se hablará, en general, de ZXUnGo+, indicando las diferencias con otros donde sea necesario.
 
@@ -464,7 +464,7 @@ Es recomendable, además, añadir los comandos esxdos específicos para ZX-Uno. 
  zxuc
  zxunocfg
 
-<<#_comandos_para_zx-uno,Más adelante>> se explica lo que hace cada uno de ellos.
+<<#_comandos_para_zx_uno,Más adelante>> se explica lo que hace cada uno de ellos.
 
 <<<
 
@@ -1173,6 +1173,11 @@ Por ejemplo:
 .iwconfig miwifi miclavedeacceso
 ----
 
+[CAUTION]
+====
+Como la frecuencia seleccionada para VGA afecta a la frecuencia del reloj maestro, para que el módulo Wi-Fi se comunique correctamente con el core, debe estar configurada a 50 (véase el <<#_advanced,apartado dedicado a la configuración de la BIOS>>).
+====
+
 ==== Network tools for ZX-Uno pack
 
 Se trata de un conjunto de programas, desarrollados por Nihirash y que se pueden https://nihirash.net/network-tools-for-zx-uno-pack/[descargar] https://nihirash.net/ugophy-1-0-and-nettools-for-zx-spectrum/#more-71[de su web].
@@ -1645,7 +1650,7 @@ Obtener la distribución de TBBlue correspondiente al core instalado, por ejempl
 
 [TIP]
 ====
-En el caso de tener en la tarjeta SD instalado <<esxdos,esxdos>>, el archivo `esxmmc.rom` debe ser la ROM con el mismo número de versión.
+En el caso de tener en la tarjeta SD instalado <<#_esxdos,esxdos>>, el archivo `esxmmc.rom` debe ser la ROM con el mismo número de versión.
 ====
 
 Si no estuviera ya, <<#_cores,instalar el core TBBlue>> en el ZX-Uno.
@@ -2431,7 +2436,7 @@ Si no se sabe el nombre a cargar, se puede averiguar con la misma secuencia de c
 
 Para ficheros binarios, se debe usar `MLOAD` en vez de `LOAD`.
 
-Es posible utilizar programas como <<#_conversión_a_fichero_de_audio,Lynx2Wav>> con los ficheros `TAP` de cinta de Lynx. Los ficheros de audio obtenidos se pueden embeber a su vez dentro de ficheros TSX o TZX con herramientas como <<#_creación_de_ficheros_tzx_o_tsx_desde_otros_formatos,MakeTSX o RetroConverter>>.
+Es posible utilizar programas como <<#_conversión_a_fichero_de_audio,Lynx2Wav>> con los ficheros `TAP` de cinta de Lynx. Los ficheros de audio obtenidos se pueden embeber a su vez dentro de ficheros TSX o TZX con herramientas como MakeTSX o RetroConverter.
 
 El script http://retrowiki.es/viewtopic.php?f=31&t=200036835[lince] facilita todo este proceso, permitiendo crear directamente ficheros `TZX` desde ficheros `TAP` de Lynx.
 

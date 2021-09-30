@@ -1,6 +1,6 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.0.0
+:revnumber: 1.0.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -24,7 +24,7 @@ Over time, the project has been growing, and now it is possible to install diffe
 
 ZX-Uno official web page is https://zxuno.speccy.org.
 
-ZXUno4All concept is to give to everyone all the cores and sotware for ZX-Uno, using backplanes in different formats, which use the main module <<ZXUnCore,ZXUnCore>>. This one is made in such a way that derived works with no direct relation to ZX-Uno . This manual is mainly oriented to the use of <<ZXUnGo+,ZXUnGo+>> o <<ZXUnSugarless,ZXUnSugarless>>, along with <<ZXUnCore,ZXUnCore>>.
+ZXUno4All concept is to give to everyone all the cores and sotware for ZX-Uno, using backplanes in different formats, which use the main module <<ZXUnCore,ZXUnCore>>. This one is made in such a way that derived works with no direct relation to ZX-Uno . This manual is mainly oriented to the use of <<ZXUnGo+,ZXUnGo+>> or ZXUnSugarless, along with <<ZXUnCore,ZXUnCore>>.
 
 In general, this document will tak about ZXUnGo+, explaining the differences with other when necessary.
 
@@ -152,7 +152,7 @@ In order to take advantage of its full potential, you may also have:
 
 ==== SD card formatting
 
-In order to use a SD card, it has to be formatted with, at least, one FAT16 or FAT32 format (depending on the case, one or the other format is recommended for compatibility with different third-party cores). It must be the first partition if there are more than one, except for the Spectrum core wich can have <<#_SD_advanced_format_3e,the first partition in +3DOS format, and then the second one in FAT16 or FAT32 format>> to use with a +3e ROM.
+In order to use a SD card, it has to be formatted with, at least, one FAT16 or FAT32 format (depending on the case, one or the other format is recommended for compatibility with different third-party cores). It must be the first partition if there are more than one, except for the Spectrum core wich can have <<#_sd_advanced_format_3e,the first partition in +3DOS format, and then the second one in FAT16 or FAT32 format>> to use with a +3e ROM.
 
 [NOTE]
 ====
@@ -167,7 +167,7 @@ When naming a partition which will be used with esxdos, it's important not to us
 
 [TIP]
 ====
-The Spectrum core can also have <<#_microsd_advanced_format_3e,the first partition in +3DOS format, and then the second one in FAT16 or FAT32 format>> to use with a +3e ROM.
+The Spectrum core can also have <<#_sd_advanced_format_3e,the first partition in +3DOS format, and then the second one in FAT16 or FAT32 format>> to use with a +3e ROM.
 ====
 
 <<<
@@ -514,7 +514,7 @@ The second screen shows the installed ZX Spectrum ROMs. You can reorder (Move Up
 [.text-center]
 image:img/bios3.png[pdfwidth=70%]
 
-_Upgrade_ screen is used to perform the different updates of the Flash memory content: esxdos, BIOS, Cores, etc. (see <<#_updates,the section corresponding to updates>> for more information).
+_Upgrade_ screen is used to perform the different updates of the Flash memory content: esxdos, BIOS, Cores, etc. (see <<#_upgrade,the section corresponding to upgrades>> for more information).
 
 <<<
 
@@ -1170,6 +1170,11 @@ For example:
 .iwconfig mywifi mypassword
 ----
 
+[CAUTION]
+====
+Since the selected VGA frequency affects the master clock frequency, for the communication between the core and the Wi-Fi module to work correctly, it has to be set at 50 (see the <<#_advanced,BIOS settings chapter>>).
+====
+
 ==== Network tools for ZX-Uno pack
 
 These are programs, developed by Nihirash and that are available to https://nihirash.net/network-tools-for-zx-uno-pack/[download] https://nihirash.net/ugophy-1-0-and-nettools-for-zx-spectrum/#more-71[from his web].
@@ -1627,7 +1632,7 @@ Obtain the TBBlue distribution that matches the core version, for example, looki
 
 [TIP]
 ====
-If you are using a SD card with <<esxdos,esxdos>>, the `esxmmc.rom` file version must match the one of the SD card.
+If you are using a SD card with <<#_esxdos,esxdos>>, the `esxmmc.rom` file version must match the one of the SD card.
 ====
 
 See the <<#_cores,corresponding section>> for instructions of how to install the TBBlue core in ZX-Uno.
@@ -2176,7 +2181,7 @@ ZX-Uno core version is developed by Quest and DistWave.
 Some of the features of the core are:
 
 - RGB and VGA support
-- Support for joysticks, keyboard, mouse and rotary encoder controls (see <<#_rotary_enoders,here>> for more information)
+- Support for joysticks, keyboard, mouse and rotary encoder controls
 
 ==== SD card format
 
@@ -2395,7 +2400,7 @@ If you don't know the name to load, you can guess with the same command sequence
 
 Binary files are loaded with `MLOAD` instead of `LOAD`.
 
-You can use programs like <<#_audio_file_conversion,Lynx2Wav>> with Lynx `TAP` files. The resulting audio files can be embedded inside of TSX or TZX with tools like <<#_creación_de_ficheros_tzx_o_tsx_desde_otros_formatos,MakeTSX or RetroConverter>>.
+You can use programs like <<#_audio_file_conversion,Lynx2Wav>> with Lynx `TAP` files. The resulting audio files can be embedded inside of TSX or TZX with tools like MakeTSX or RetroConverter.
 
 The http://retrowiki.es/viewtopic.php?f=31&t=200036835[lince] script makes all this process easier, creating directly Maxduino `TZX` compatible files from Lynx `TAP` files.
 
