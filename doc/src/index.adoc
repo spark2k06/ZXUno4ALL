@@ -1,6 +1,6 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.0.1
+:revnumber: 1.1.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -502,6 +502,8 @@ In the first configuration screen, in addition to being able to run several test
 
 More technical information can be found on https://www.zxuno.com/wiki/index.php/ZX_Spectrum[the ZX-Uno Wiki].
 
+<<<
+
 ==== ROMs
 
 [.text-center]
@@ -547,6 +549,54 @@ The Advanced configuration screen is used to edit the following settings:
 - VGA horizontal frequency: 50, 51, etc.
 - CPU speed: Normal (1x) or accelerated (2X, 3X, etc.)
 - Csync: Spectrum or PAL
+
+This table explains how the joystick buttons are assigned:
+
+[align="center",width="100%",%header,cols=6*,options="header"]
+|===
+|Button
+|Kempston
+|Sinclair 1
+|Sinclair 2
+|Protek
+|Fuller
+|Left
+|Bit 0
+|1
+|6
+|5
+|Bit 2
+|Right
+|Bit 1
+|2
+|7
+|8
+|Bit 3
+|Down
+|Bit 2
+|3
+|8
+|6
+|Bit 1
+|Up
+|Bit 3
+|4
+|9
+|7
+|Bit 0
+|Fire 1
+|Bit 4
+|5
+|0
+|0
+|Bit 4
+|Fire 2
+|Bit 5
+|X
+|Z
+|9
+|Bit 5
+|===
 
 <<<
 
@@ -2353,7 +2403,7 @@ Remember that, after inserting a disc, if it has automatic boot, you can start i
 
 https://en.wikipedia.org/wiki/Camputers_Lynx[The Lynx] was an 8-bit British home computer that was first released in early 1983 as a 48kB model.Several models were available with 48kB, 96kB or 128 kB RAM.
 
-The ZX-Uno core has these features:
+The ZX-Uno core has been https://github.com/Kyp069/lynx[developed by Kyp069] and has these features:
 
 - 48kB and 96 kB modes
 - Optional Scorpion ROM
@@ -3349,7 +3399,7 @@ You can move faster through the menu options using `Page Up` (`Caps Shift+Symbol
 
 The https://en.wikipedia.org/wiki/Oric#Oric_Atmos[Oric Atmos] was the name used by UK-based Tangerine Computer Systems for one 6502-based home computer sold in the 1980s, primarily in Europe.
 
-The ZX-Uno core has these features:
+It has been https://github.com/Kyp069/atmos[developed by Kyp069] and has these features:
 
 - VGA / RGB video Out
 - NMI
@@ -3990,6 +4040,121 @@ You can load a external tape or from other external audio device with the comman
 [WARNING]
 ====
 Some monitor stop playing audio if the video signal is lost. It's recommended to plug headphones or a external speaker if you want to hear the sound while loading a tape.
+====
+
+<<<
+
+=== ZX81 and ZX80
+
+Alternative ZX81 and ZX80 core, made by avlixa, based on Grant Searle's ZX80 page.
+
+Features:
+
+- Selectable ZX80/ZX81 (ZX80 currently working only in RGB mode)
+- 16k/32k/48k RAM packs
+- 8KB with CHR$128/UDG addon (not tested)
+- QS CHRS (not tested)
+- CHROMA81
+- Turbo in Slow mode: NoWait, x2, x8
+- YM2149 sound chip (ZON X-81 compatible)
+- Joystick types: Cursor, Sinclar, ZX81, ZXpand
+- PAL/NTSC timings
+- Turbo loading of .o and .p files
+- Load alternative ROM
+- Program loading using the audio input
+
+==== SD card format
+
+You can use a SD card with the first partition in FAT16 or FAT32 format to store ROM and tape files.
+
+You can copy a file named `ZX8X.ROM` (available at the https://github.com/avlixa/ZX81_MiSTer_zxdos/raw/master/roms/zx8x.rom[official repository] into folder `/zx81/roms`: it is a concatenation of ZX81 rom (8k) + ZX80 rom (4k).
+
+See the <<#_cores,corresponding section>> for instructions of how to install the ZX81 and ZX80 core in ZXUNO+.
+
+<<<
+
+==== Keyboard
+
+The following ZXUnGo+ keyboard combinations are obtained while in `ZX81` mode (`Caps Shift+Symbol Shift+F`, then `U` and then `F`). Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
+
+The PS/2 keyboard isn't mapped and the original machine keys layout is kept. For example, to obtain a `"` you have to type `Shift+P` or `Shift+0` to delete.
+
+**ZX80**
+
+[.text-center]
+image:img/keyboardZX80.jpg[pdfwidth=80%]
+
+**ZX81**
+
+[.text-center]
+image:img/keyboardZX81.jpg[pdfwidth=80%]
+
+<<<
+
+===== Special keys and buttons
+
+During the core execution:
+
+- `F1` (`Caps Shift+Symbol Shift+1` on ZXUnGo+): Enable or disable the alternative chars
+- `F5` (`Caps Shift+Symbol Shift+5` on ZXUnGo+) or joystick button 2: Show or hide configuration menu
+- `F9` (`Caps Shift+Symbol Shift+9` on ZXUnGo+): Disables or enables the MIC audio output, since some games make annoying sounds when enabled
+- `F10` (`Caps Shift+Symbol Shift+0` on ZXUnGo+): Enables or disables playing the audio input through the audio output, to hear loading sounds while loading
+- `Scroll Lock` (`Caps Shift+Symbol Shift+Y` on ZXUnGo+): Switch between RGB and VGA video output
+- `Ctrl+Alt+Supr` (`Caps Shift+Symbol Shift+F` and then `N` on ZXUnGo+): Reset
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` and then `B` on ZXUnGo+): Hard reset
+
+==== Basic Guide
+
+Pressing `F5` (`Caps Shift+Symbol Shift+5` on ZXUnGo+) or joystick button 2 shows or hides the configuration menu. Cursor keys (`Caps Shift+5`, `Caps Shift+6`, `Caps Shift+7` and `Caps Shift+8` on ZXUnGo+) and `Enter` to select and choose menu options.
+
+[.text-center]
+image:img/zx8180.jpg[pdfwidth=70%]
+
+The following options are available:
+
+- Reset
+- Load Tape
+- Load ROM
+- Configuration Options
+- Exit
+
+<<<
+
+[.text-center]
+image:img/zx8180_2.jpg[pdfwidth=70%]
+
+- Computer Model: ZX80/ZX81
+- Main RAM: 16K/32K
+- Low RAM: Off/8KB
+- Joystick: Cursor/Sinclair/ZX81
+- QS CHRS: Disabled/Enabled
+- CHR$128/UDG: 128 chars/64 chars/Disabled
+- Chroma81: Disabled/Enabled
+- Inverse Video: Off/On
+- Black Border: Off/On
+- Slow mode speed: Original/No Wait/x2
+- Video frequency: 50Hz/60Hz
+
+You can load a tape file selecting it from the menu, then enter the command `LOAD""` and `Enter`
+
+[TIP]
+====
+Some monitors stop playing audio if the video signal is lost. It's recommended to plug headphones or a external speaker if you want to hear the sound while loading a tape. On a +UNO, the internal speaker will play the sound if nothing is connected to the audio out port.
+====
+
+`.p` files with colorization and char are supported.
+
+For colorization to work, CHROMA81 should be enabled before loading. For alternate chars, QS CHRS should be enabled before loading.
+
+[TIP]
+====
+The recommended options for most games are:
+
+Main RAM: 16KB
+Low RAM: 8KB
+CHR$128: 128 chars
+QS CHRS: enabled
+CHROMA81: enabled
 ====
 
 <<<

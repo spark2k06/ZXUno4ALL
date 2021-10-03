@@ -1,6 +1,6 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.0.1
+:revnumber: 1.1.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -550,6 +550,54 @@ La pantalla de configuración avanzada sirve para modificar los siguientes ajust
 - Frecuencia horizontal de VGA (Frequency): 50, 51, etc.
 - Velocidad de la CPU: Normal (1x) o acelerada (2X, 3X, etc.)
 - Csync: Spectrum o PAL
+
+La siguiente tabla resume las distintas asignaciones de botones de joystick:
+
+[align="center",width="100%",%header,cols=6*,options="header"]
+|===
+|Botón
+|Kempston
+|Sinclair 1
+|Sinclair 2
+|Protek
+|Fuller
+|Izquierda
+|Bit 0
+|1
+|6
+|5
+|Bit 2
+|Derecha
+|Bit 1
+|2
+|7
+|8
+|Bit 3
+|Abajo
+|Bit 2
+|3
+|8
+|6
+|Bit 1
+|Arriba
+|Bit 3
+|4
+|9
+|7
+|Bit 0
+|Disparo 1
+|Bit 4
+|5
+|0
+|0
+|Bit 4
+|Disparo 2
+|Bit 5
+|X
+|Z
+|9
+|Bit 5
+|===
 
 <<<
 
@@ -2389,7 +2437,7 @@ Recordar, tras insertar un disco, que si este tiene arranque automático, se pue
 
 El https://es.wikipedia.org/wiki/Camputers_Lynx[Lynx] fue un ordenador doméstico británico de 8 bits lanzado a principios de 1983 por la compañía Camputers. Se lanzaron en total tres modelos, con 48kB, 96kB o 128kB de RAM.
 
-La versión para ZX-Uno tiene estas características:
+La versión para ZX-Uno ha sido https://github.com/Kyp069/lynx[desarrollada por Kyp069] y tiene las siguientes características:
 
 - Modos 48kB y 96 kB
 - ROM Scorpion opcional
@@ -3489,7 +3537,7 @@ Para ejecutar un programa, se ha de escribir `-` delante del nombre. Así, por e
 
 Otra versión distinta de core de https://es.wikipedia.org/wiki/Oric_Atmos[Oric Atmos], basada en la versión de Rampa para MiST, Mistica y SiDi.
 
-Esta versión tiene las siguientes características:
+Esta versión ha sido https://github.com/Kyp069/atmos[desarrollada por Kyp069] y tiene las siguientes características:
 
 - Salida de vídeo compuesto o VGA (Scandoubler)
 - 64KB de RAM y 16KB de ROM. La ROM oculta la parte alta de la memoria, pero se puede acceder a todos los bancos de memoria mediante ensamblador
@@ -4040,6 +4088,121 @@ Desde BASIC, se puede cargar desde una cinta (u otro dispositivo externo de audi
 [WARNING]
 ====
 Algunos monitores dejan de reproducir la entrada de audio si se desactiva la señal de vídeo. Se recomienda conectar unos auriculares o altavoces externos para poder oir el sonido durante la carga de una cinta.
+====
+
+<<<
+
+=== ZX81 y ZX80
+
+Versión alternativa de core de ZX81 y ZX80 creada por avlixa, basada en la página de Grant Searle's sobre el ZX80
+
+Características:
+
+- Se puede elegir entre ZX80 y ZX81 (ZX80 sólo con salida RGB por el momento)
+- 16k/32k/48k RAM packs
+- 8KB con addon CHR$128/UDG (sin probar)
+- QS CHRS (sin probar)
+- CHROMA81
+- Turbo en modo lento: NoWait, x2, x8
+- Chip de sonido YM2149 (compatible con ZON X-81)
+- Múltiples joysticks (Cursor, Sinclar, ZX81, ZXpand)
+- Timings PAL y NTSC
+- Turbo carga de ficheros .o y .p
+- Carga de ROM alternativa
+- Carga de programas a través de la entrada de audio
+
+==== Formato de Tarjeta SD
+
+Se debe de utilizar una tarjeta SD, con la primera partición en formato FAT16 o FAT32, para almacenar los ficheros con archivos de cinta o ROM que se deseen cargar.
+
+Se puede copiar, si se desea, un fichero `ZX8X.ROM` (disponible the https://github.com/avlixa/ZX81_MiSTer_zxdos/raw/master/roms/zx8x.rom[repositorio oficial] en el directorio `/zx81/roms`: se trata de los ficheros ZX81 rom (8k) + ZX80 rom (4k) concatenados.
+
+Si no estuviera ya, <<#_cores,instalar el core de ZX81 y ZX80>> en el ZX-Uno.
+
+<<<
+
+==== Teclado
+
+Las combinaciones específicas de ZXUnGo+ que se indican a continuación se corresponden con el modo de teclado `ZX81` (`Caps Shift+Symbol Shift+F`, luego `U` y luego `D`). Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.
+
+El teclado no está mapeado a la distribución PS/2 estándar, y mantiene la distribución de la máquina original. Así, por ejemplo, para obtener `"` se ha de pulsar `Mayús+P` o para borrar, `Mayús+0`.
+
+**ZX80**
+
+[.text-center]
+image:img/keyboardZX80.jpg[pdfwidth=80%]
+
+**ZX81**
+
+[.text-center]
+image:img/keyboardZX81.jpg[pdfwidth=80%]
+
+<<<
+
+===== Teclas especiales y botones
+
+Durante la ejecución del core:
+
+- `F1` (`Caps Shift+Symbol Shift+1` en ZXUnGo+): Habilitar o deshabilitar los caracteres alternativos
+- `F5` (`Caps Shift+Symbol Shift+5` en ZXUnGo+) o el botón 2 del joystick para mostrar u ocultar el menú.
+- `F9` (`Caps Shift+Symbol Shift+9` en ZXUnGo+): Deshabilita o habilita la salida MIC al conector de audio, porque algunos juegos generan un ruido molesto
+- `F10` (`Caps Shift+Symbol Shift+0` en ZXUnGo+): Habilita o deshabilita sonido de entrada por la salida de audio, para escuchar la cinta si se carga por audio
+- `Bloq. Despl.` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+: para cambiar entre modo de vídeo RGB y VGA
+- `Ctrl+Alt+Supr` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+): Reset
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+): Hard reset.
+
+==== Guía básica
+
+Pulsando `F5` (`Caps Shift+Symbol Shift+5` en ZXUnGo+) o el botón 2 del joystick se muestra el menú de configuración. Se usan las teclas de cursor (`Caps Shift+5`, `Caps Shift+6`, `Caps Shift+7` y `Caps Shift+8` en ZXUnGo+) y `Enter` para elegir y seleccionar opciones del menú.
+
+[.text-center]
+image:img/zx8180.jpg[pdfwidth=70%]
+
+En él se pueden activar, desactivar o configurar las siguientes opciones:
+
+- Reiniciar el core (Reset)
+- Cargar un archivo de cinta (Load Tape)
+- Cargar una ROM alternativa (Load ROM)
+- Configurar opciones (Configuration Options)
+- Salir del menú (Exit)
+
+<<<
+
+[.text-center]
+image:img/zx8180_2.jpg[pdfwidth=70%]
+
+- Elegir el modelo de computador (Computer Model): ZX80/ZX81
+- Tamaño de RAM (Main RAM): 16K/32K
+- RAM baja (Low RAM): Off/8KB
+- Joystick: Cursor/Sinclair/ZX81
+- Habilitar o deshabilitar QS CHRS
+- Configuración de CHR$128/UDG: 128 chars/64 chars/Disabled
+- Habilitar o deshabilitar Chroma81: Disabled/Enabled
+- Vídeo inverso (Inverse Video): Off/On
+- Borde negro (Black Border): Off/On
+- Modo de velocidad (Slow mode speed): Original/No Wait/x2
+- Frecuencia de vídeo (Video frequency): 50Hz/60Hz
+
+Desde BASIC, se puede cargar desde un fichero cinta, que se haya seleccionado desde el menú, con el comando `LOAD""` y pulsando `Enter`.
+
+[TIP]
+====
+Algunos monitores dejan de reproducir la entrada de audio si se desactiva la señal de vídeo. Se recomienda conectar unos auriculares o altavoces externos para poder oir el sonido durante la carga de una cinta.
+====
+
+Se pueden cargar archivos `.p` con color y caracteres alternativos.
+
+Para que funcione el coloreado, se debe activar CHROMA81 antes de la carga. Igualmente, para los caracteres alternativos, QS CHRS debería estar activo antes de cargar.
+
+[TIP]
+====
+Las opciones recomendadas para la mayoría de los juegos son:
+
+Main RAM: 16KB
+Low RAM: 8KB
+CHR$128: 128 chars
+QS CHRS: enabled
+CHROMA81: enabled
 ====
 
 <<<
