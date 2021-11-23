@@ -1,11 +1,11 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.1.0
+:revnumber: 1.1.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
 :email: kounch@users.noreply.github.com
-:Revision: 1.0
+:Revision: 1.1
 :description: Manual en castellano de ZXUno4ALL
 :keywords: Manual, Castellano, ZXUno4ALL
 :icons: font
@@ -313,8 +313,8 @@ sudo fdisk --compatibility=dos /dev/sdc
 (...)
 Command (m for help): n
 Partition type
- p primary (0 primary, 0 extended, 4 free)
- e extended (container for logical partitions)
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
 Select (default p): p
 Partition number (1-4, default 1): 1
 First sector (62-31116288, default 62):
@@ -335,8 +335,8 @@ Disk /dev/sdc
 Disklabel type: dos
 Disk identifier
 
-Device Boot Start End Sectors Size Id Type
-/dev/sdc1  62 31116288 31116288 984,9M 6 FAT16
+Device     Boot   Start     End  Sectors   Size Id Type
+/dev/sdc1           62 31116288  31116288 984,9M 6 FAT16
 ----
 
 Formatear la partición FAT (requiere permisos de root)
@@ -561,42 +561,49 @@ La siguiente tabla resume las distintas asignaciones de botones de joystick:
 |Sinclair 2
 |Protek
 |Fuller
+|QAOPSpcM
 |Izquierda
 |Bit 0
 |1
 |6
 |5
 |Bit 2
+|`O`
 |Derecha
 |Bit 1
 |2
 |7
 |8
 |Bit 3
+|`P`
 |Abajo
 |Bit 2
 |3
 |8
 |6
 |Bit 1
+|`A`
 |Arriba
 |Bit 3
 |4
 |9
 |7
 |Bit 0
+|`Q`
 |Disparo 1
 |Bit 4
 |5
 |0
 |0
 |Bit 4
+|`Espacio`
 |Disparo 2
 |Bit 5
 |X
 |Z
 |9
 |Bit 5
+|`M`
 |===
 
 <<<
@@ -790,10 +797,10 @@ Las principales diferencias con Microsoft BASIC son:
 - Abreviación de tokens.
 - Comprobación de sintaxis en cada entrada.
 - Normalmente los paréntesis son opcionales.
-- Introducció de número con el estilo Motorola:
- % – binario
- @ – octal
- $ – hexadecimal
+- Introducción de número con el estilo Motorola:
+  % – binario
+  @ – octal
+  $ – hexadecimal
 - Evaluación de expresiones siempre activa.
 - Operadores lógicos y bit a bit separados.
 - Tipado automático de datos.
@@ -873,9 +880,9 @@ En este ejemplo sería el disco 6:
 ----
 (...)
 /dev/disk6 (external, physical):
- #:   TYPE NAME   SIZE IDENTIFIER
- 0: FDisk_partition_scheme   *15.9 GB disk6
- 1:   DOS_FAT_32 UNKNOWN   15.9 GB disk6s1
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *15.9 GB    disk6
+   1:                 DOS_FAT_32 UNKNOWN                 15.9 GB    disk6s1
 ----
 
 Pasos a seguir:
@@ -914,13 +921,13 @@ Partition offset [0 - 31116288]: [9829784]
 Partition size [1 - 21286504]: [21286504]
 
 fdisk:*1> print
- Starting Ending
- #: id cyl hd sec - cyl hd sec [ start - size]
+         Starting       Ending
+ #: id  cyl  hd sec -  cyl  hd sec [     start -       size]
 ------------------------------------------------------------------------
- 1: 7F 1023 254 63 - 1023 254 63 [ 128 - 2017152] <Unknown ID>
- 2: 06 1023 254 63 - 1023 254 63 [ 2017280 - 7812504] DOS > 32MB
- 3: 0B 1023 254 63 - 1023 254 63 [ 9829784 - 21286504] Win95 FAT-32
- 4: 00 0 0 0 - 0 0 0 [  0 -  0] unused
+ 1: 7F 1023 254  63 - 1023 254  63 [       128 -    2017152] <Unknown ID>
+ 2: 06 1023 254  63 - 1023 254  63 [   2017280 -    7812504] DOS > 32MB
+ 3: 0B 1023 254  63 - 1023 254  63 [   9829784 -   21286504] Win95 FAT-32
+ 4: 00    0   0   0 -    0   0   0 [         0 -          0] unused
 
 fdisk:*1> write
 fdisk: 1> quit
@@ -948,11 +955,11 @@ diskutil list
 ----
 (...)
 /dev/disk6 (external, physical):
- #:   TYPE NAME   SIZE IDENTIFIER
- 0: FDisk_partition_scheme   *15.9 GB disk6
- 1:   0x7F    1.0 GB disk6s1
- 2:   DOS_FAT_16 ZXUNCORE  4.0 GB disk6s2
- 3:   DOS_FAT_32 EXTRA   10.9 GB disk6s3
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *15.9 GB    disk6
+   1:                       0x7F                         1.0 GB     disk6s1
+   2:                 DOS_FAT_16 ZXUNOPLUS               4.0 GB     disk6s2
+   3:                 DOS_FAT_32 EXTRA                   10.9 GB    disk6s3
 ----
 
 <<<
@@ -970,10 +977,10 @@ En este ejemplo sería `sdc`:
 
 [source]
 ----
-NAME  MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 (..)
-sdc  179:0 0 15,8G 0 disk
-└─sdc1 179:1 0 15,8G 0 part
+sdc          179:0    0 15,8G  0 disk
+└─sdc1       179:1    0 15,8G  0 part
 ----
 
 Pasos a seguir:
@@ -993,8 +1000,8 @@ Be careful before using the write command.
 
 Command (m for help): n
 Partition type
- p primary (0 primary, 0 extended, 4 free)
- e extended (container for logical partitions)
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
 Select (default p): p
 Partition number (1-4, default 1): 1
 First sector (62-31116288, default 62): 128
@@ -1009,11 +1016,11 @@ Changed type of partition 'Linux' to 'unknown'.
 
 Command (m for help): n
 Partition type
- p primary (1 primary, 0 extended, 3 free)
- e extended (container for logical partitions)
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
 Select (default p): p
 Partition number (2-4, default 2):
-First sector (45-31116288, default 45): 2017280 .
+First sector (45-31116288, default 45): 2017280
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (2017153-31116288, default 31116288): 7812504
 
 Created a new partition 2 of type 'Linux'
@@ -1031,11 +1038,11 @@ The bootable flag on partition 2 is enabled now.
 
 Command (m for help): n
 Partition type
- p primary (1 primary, 0 extended, 3 free)
- e extended (container for logical partitions)
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
 Select (default p): p
 Partition number (2-4, default 3): 3
-First sector (45-31116288, default 45): 9829784 .
+First sector (45-31116288, default 45): 9829784
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (2017153-31116288, default 31116288): 31116288
 
 Created a new partition 2 of type 'Linux'
@@ -1051,10 +1058,10 @@ Disk /dev/sda
 Disklabel type: dos
 Disk identifier
 
-Device    Boot Start   End     Sectors  Size    Id Type
-/dev/sda1      128     2017152 2017025  984,9M 7f  unknown
-/dev/sda2 *    2017280 7626751 7812504     2,7G  b FAT16
-/dev/sda3      9829784 7626751 21286504     21G  b W95 FAT32
+Device     Boot   Start     End  Sectors   Size Id Type
+/dev/sda1           128 2017152  2017025 984,9M 7f unknown
+/dev/sda2  *    2017280 7626751  7812504   2,7G  b FAT16
+/dev/sda3       9829784 7626751 21286504    21G  b W95 FAT32
 ----
 
 [start=2]
@@ -1076,12 +1083,12 @@ lsblk
 
 [source]
 ----
-NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+NAME      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 (...)
-sda 179:0 0 15,8G 0 disk
-├─sda1 179:1 0 1G 0 part
-├─sda2 179:2 0 4G 0 part
-├─sda3 179:3 0 10,8G 0 part
+sda      179:0    0 15,8G  0 disk
+├─sda1   179:1    0    1G  0 part
+├─sda2   179:2    0    4G  0 part
+├─sda3   179:3    0 10,8G  0 part
 ----
 
 ==== +3e
@@ -1243,7 +1250,7 @@ Cliente de FTP desarrollado por Yombo, disponible https://github.com/yomboprime/
 Para utilizarlo, se deben seguir los siguientes pasos:
 
 . Editar el archivo `FTP.CFG` con los datos necesarios (Wi-Fi, servidor FTP al que conectar, etc.)
-. Copiar `FTP.CFG` en `/SYS/CONFIG/` en la tarjeta microSD
+. Copiar `FTP.CFG` en `/SYS/CONFIG/` en la tarjeta SD
 . Copiar también `ftpUno.tap` al lugar que desee de la tarjeta
 . Iniciar el ZX-Uno y cargar el archivo de cinta `ftpUno.tap`
 
@@ -1684,16 +1691,16 @@ Se debe de utilizar una tarjeta SD con la primera partición en formato FAT16 o 
 Obtener la distribución de TBBlue correspondiente al core instalado, por ejemplo, consultando en https://www.zxuno.com/forum/viewtopic.php?f=47&t=491[los foros de ZX-Uno]. Normalmente la estructura necesaria para el core es una como la siguiente (en la raíz de la tarjeta SD):
 
 ----
- /
- +-TBBLUE/
- | +-128.rom
- | (...)
- | +-config.ini
- | (...)
- | +-esxmmc.rom
- | (...)
- |
- +-TBBLUE.FW
+   /
+   +-TBBLUE/
+   |  +-128.rom
+   |  (...)
+   |  +-config.ini
+   |  (...)
+   |  +-esxmmc.rom
+   |  (...)
+   |
+   +-TBBLUE.FW
 ----
 
 [TIP]
@@ -1758,26 +1765,26 @@ Ahora, se puede organizar la información en la tarjeta SD de dos maneras distin
 . Organizar la información de una manera más reducida en la raíz, utilizando sólo dos directorios. Crear un directorio `ATOM` en la raíz de la tarjeta, y copiar en su interior todo el contenido del archivo, excepto el directorio `MANPAGES` que se tendrá que poner también en la raíz de la SD. Luego, copiar los ficheros del archivo `trick_ATOM_folder` (disponible https://www.zxuno.com/forum/viewtopic.php?f=16&t=4006[en el foro de ZX-Uno]), reemplazando todos los que se encuentren con el mismo nombre. Así, quedará una estructura como la siguiente:
 
 ----
- /
- +-ATOM/
- | +-AA/
- | (...)
- | +-AGD/
- | | +-SHOW2
- | | +-SHOW3
- | (...)
- | +-MENU
- | (...)
- | +-TUBE/
- | | +-BOOT6502
- | (..)
- |
- +-MANPAGES/
- | +-CPM.MAN
- | +-FLEX.MAN
- | (...)
- |
- +-MENU
+        /
+        +-ATOM/
+        |  +-AA/
+        |  (...)
+        |  +-AGD/
+        |  | +-SHOW2
+        |  | +-SHOW3
+        |  (...)
+        |  +-MENU
+        |  (...)
+        |  +-TUBE/
+        |  | +-BOOT6502
+        |  (..)
+        |
+        +-MANPAGES/
+        |  +-CPM.MAN
+        |  +-FLEX.MAN
+        |  (...)
+        |
+        +-MENU
 ----
 
 <<<
@@ -3604,8 +3611,6 @@ Cuando se detecte un programa en la carga, el texto cambiará a
 Loading...<nombre de programa>
 ----
 
-<<<
-
 En los http://www.retrowiki.es/viewtopic.php?f=110&t=200037261[foros de RetroWiki] hay disponible un script de linux llamado `calorico.sh` que usa bash y PHP, junto con https://github.com/nataliapc/MSX_devs/tree/master/TSXphpclass[las utilidades TSXphpclass de Natalia Pujol] para convertir ficheros `.TAP` de Oric en archivos `.TSX`.
 
 [TIP]
@@ -3616,76 +3621,6 @@ Para grabar un programa BASIC usando la salida de audio, se puede utilizar el co
 [WARNING]
 ====
 *No* debe estar activo el sonido de grabación (tecla `F10` o `Caps Shift+Symbol Shift+Z` en ZXUnGo+) durante una carga desde audio externo. El motivo es que la activación del sonido de grabación provoca una retroalimentación con un ruido alto y agudo que impide la carga por audio.
-====
-
-<<<
-
-=== Pong
-
-Pong https://es.wikipedia.org/wiki/Pong[fue un videojuego] de la primera generación de videoconsolas publicado por Atari.
-
-La última versión para ZX-Uno ha sido realizada por avlixa, y algunas de sus características son:
-
-- Dos modos de vídeo seleccionables: Vídeo compuesto/RGB y VGA
-- 7 tipos de juego
-- Soporte 2 o 4 jugadores
-- Compatible con joystick(s), teclado, ratón y codificadores (encoders) rotatorios
-- Varios modos de color
-
-==== Formato de Tarjeta SD
-
-Este core no utiliza la tarjeta SD.
-
-<<<
-
-==== Teclado
-
-===== Teclas especiales y botones
-
-Las combinaciones específicas de ZXUnGo+ que se indican a continuación se corresponden con cualquier modo de teclado excepto el modo `ZX` normal. Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.. Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.
-
-Durante la ejecución del core:
-
-- `Esc` (`Caps Shift+Espacio` en ZXUnGo+) o botón 2 del joystick: Mostrar u ocultar el menú de configuración
-- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+) o `F11` (`Caps Shift+Symbol Shift+Q` en ZXUnGo+): Hard reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
-- `F3` (`Caps Shift+Symbol Shift+3` en ZXUnGo+) o `F12` (`Caps Shift+Symbol Shift+W` en ZXUnGo+): Reinicio del juego
-- Número del `1` al `7`: Cambiar el tipo de juego
-- Joystick 2 (derecha): Control de paleta de la derecha (Jugador 1).
-- Joystick 1 (izquierda): Control de paleta de la izquierda (Jugador 2)
-- `Cursor arriba` y `Cursor abajo` (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) o `O` y `K`: Control de paleta de la derecha (Jugador 1 en modo 2 jugadores y jugador 3 en modo de 4 jugadores)
-- `Q` y `A`: Control de paleta de la izquierda (Jugador 2 en modo 2 jugadores y jugador 4 en modo de 4 jugadores)
-- `Z`, `M` o botón de joystick 1: Saque manual
-- Teclas de cursor (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) y `Enter` para navegar por el menú
-
-<<<
-
-==== Guía básica
-
-Pulsando `Esc` (`Caps Shift+Espacio` en ZXUnGo+) o el botón 2 del joystick se muestra el menú de configuración. Se usan las teclas de cursor (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) y `Enter` para elegir y seleccionar opciones del menú.
-
-[.text-center]
-image:img/ponguno.jpg[pdfwidth=70%]
-
-En él se pueden activar o desactivar las siguientes opciones:
-
-- Reset del core
-- Servicio automático o manual (Serve)
-- Ángulo de la bola (Ball Angle)
-- Velocidad de la bola (Ball Speed)
-- Tamaño de las palas (Paddle Size)
-- Sonido (Sound)
-- Número de jugadores (dos -two- o cuatro -four-)
-- Velocidad Aleatoria (Random Speed)
-- Ángulo Aleatorio (Random Angle)
-- Control por Joystick, teclado o ratón (Joystick)
-- Precisión del movimiento (Paddle Accuracy)
-- Modo de color (Mode)
-- Modo de joystick para ZX-Uno (único, con splitter o con VGA2M)
-- Salir del menú (Exit menu)
-
-[TIP]
-====
-En el caso de utilizar un ratón como método de control, es muy recomendable conectarlo al ZX-Uno antes de arrancar el core
 ====
 
 <<<
@@ -3813,6 +3748,76 @@ image:img/pcxt.png[pdfwidth=70%]
 [CAUTION]
 ====
 No se recomienda usar el modo de teclado `PC XT` en ZXUnGo+, a la vez que un teclado de PS/2 conectado, ya que se generan conflictos y no funciona correctamente.
+====
+
+<<<
+
+=== Pong
+
+Pong https://es.wikipedia.org/wiki/Pong[fue un videojuego] de la primera generación de videoconsolas publicado por Atari.
+
+La última versión para ZX-Uno ha sido realizada por avlixa, y algunas de sus características son:
+
+- Dos modos de vídeo seleccionables: Vídeo compuesto/RGB y VGA
+- 7 tipos de juego
+- Soporte 2 o 4 jugadores
+- Compatible con joystick(s), teclado, ratón y codificadores (encoders) rotatorios
+- Varios modos de color
+
+==== Formato de Tarjeta SD
+
+Este core no utiliza la tarjeta SD.
+
+<<<
+
+==== Teclado
+
+===== Teclas especiales y botones
+
+Las combinaciones específicas de ZXUnGo+ que se indican a continuación se corresponden con cualquier modo de teclado excepto el modo `ZX` normal. Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.. Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.
+
+Durante la ejecución del core:
+
+- `Esc` (`Caps Shift+Espacio` en ZXUnGo+) o botón 2 del joystick: Mostrar u ocultar el menú de configuración
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+) o `F11` (`Caps Shift+Symbol Shift+Q` en ZXUnGo+): Hard reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
+- `F3` (`Caps Shift+Symbol Shift+3` en ZXUnGo+) o `F12` (`Caps Shift+Symbol Shift+W` en ZXUnGo+): Reinicio del juego
+- Número del `1` al `7`: Cambiar el tipo de juego
+- Joystick 2 (derecha): Control de paleta de la derecha (Jugador 1).
+- Joystick 1 (izquierda): Control de paleta de la izquierda (Jugador 2)
+- `Cursor arriba` y `Cursor abajo` (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) o `O` y `K`: Control de paleta de la derecha (Jugador 1 en modo 2 jugadores y jugador 3 en modo de 4 jugadores)
+- `Q` y `A`: Control de paleta de la izquierda (Jugador 2 en modo 2 jugadores y jugador 4 en modo de 4 jugadores)
+- `Z`, `M` o botón de joystick 1: Saque manual
+- Teclas de cursor (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) y `Enter` para navegar por el menú
+
+<<<
+
+==== Guía básica
+
+Pulsando `Esc` (`Caps Shift+Espacio` en ZXUnGo+) o el botón 2 del joystick se muestra el menú de configuración. Se usan las teclas de cursor (`Caps Shift+6` y `Caps Shift+7` en ZXUnGo+) y `Enter` para elegir y seleccionar opciones del menú.
+
+[.text-center]
+image:img/ponguno.jpg[pdfwidth=70%]
+
+En él se pueden activar o desactivar las siguientes opciones:
+
+- Reset del core
+- Servicio automático o manual (Serve)
+- Ángulo de la bola (Ball Angle)
+- Velocidad de la bola (Ball Speed)
+- Tamaño de las palas (Paddle Size)
+- Sonido (Sound)
+- Número de jugadores (dos -two- o cuatro -four-)
+- Velocidad Aleatoria (Random Speed)
+- Ángulo Aleatorio (Random Angle)
+- Control por Joystick, teclado o ratón (Joystick)
+- Precisión del movimiento (Paddle Accuracy)
+- Modo de color (Mode)
+- Modo de joystick para ZX-Uno (único, con splitter o con VGA2M)
+- Salir del menú (Exit menu)
+
+[TIP]
+====
+En el caso de utilizar un ratón como método de control, es muy recomendable conectarlo al ZX-Uno antes de arrancar el core
 ====
 
 <<<
@@ -4725,7 +4730,7 @@ En el caso de ZXUnGo+, como la configuración de la imagen de recuperación por 
 - `Advanced` -> `video`: `VGA` (sólo si no teníamos imagen)
 . Guardar los cambios de la BIOS:
 - `Exit` -> `Save changes and exit`
-.Apagar completamente el ZXUnGo+ y volver a encenderlo
+. Apagar completamente el ZXUnGo+ y volver a encenderlo
 ====
 
 <<<
@@ -4853,7 +4858,7 @@ En el caso de ZXUnGo+, como la configuración de la imagen de recuperación por 
 - `Advanced` -> `video`: `VGA` (sólo si no teníamos imagen)
 . Guardar los cambios de la BIOS:
 - `Exit` -> `Save changes and exit`
-.Apagar completamente el ZXUnGo+ y volver a encenderlo
+. Apagar completamente el ZXUnGo+ y volver a encenderlo
 ====
 
 [NOTE]
@@ -4958,7 +4963,7 @@ En el caso de ZXUnGo+, como la configuración de la imagen de recuperación por 
 - `Advanced` -> `video`: `VGA` (sólo si no teníamos imagen)
 . Guardar los cambios de la BIOS:
 - `Exit` -> `Save changes and exit`
-.Apagar completamente el ZXUnGo+ y volver a encenderlo
+. Apagar completamente el ZXUnGo+ y volver a encenderlo
 ====
 
 <<<
@@ -5006,9 +5011,13 @@ https://www.zxuno.com/forum/viewtopic.php?f=37&t=208[Configuración de teclado d
 
 https://docs.google.com/spreadsheets/d/17-ifpHcy932_AP7SAv9uBLxg-2ZptcdgTvQ8ILXQLM4/htmlview[Almost (In-) Complete List of esxDOS DOT-Commands]
 
+http://www.benophetinternet.nl/hobby/vanmezelf/ESXDOS%20manual.pdf[ESXDOS Manual]
+
 http://retrowiki.es/viewtopic.php?f=83&t=200032578&p=200075671&hilit=wifi#p200075671[WiFi (RetroWiki)]
 
 https://www.va-de-retro.com/foros/viewtopic.php?t=1718&start=10#p25076[Cargando Leches 2.0]
+
+https://vintageisthenewold.com/se-basic-iv-updated/[SE Basic IV updated]
 
 https://www.zxuno.com/forum/viewtopic.php?f=35&t=44[WiFi en ZX-Uno]
 
@@ -5083,6 +5092,8 @@ https://original.sharpmz.org/mzf2wav.htm[mzf2wav]
 https://github.com/jorgefuertes/retroconverter/releases[RetroConverter]
 
 http://retrowiki.es/viewtopic.php?f=31&t=200036835[Lince Script]
+
+https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation[Hardware files to support STM32 based boards on Arduino version 1.8.x]
 
 https://catleytech.com/?p=2679[Programming a Spartan 6 with a Raspberry Pi]
 

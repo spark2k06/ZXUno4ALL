@@ -1,11 +1,11 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.1.0
+:revnumber: 1.1.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
 :email: kounch@users.noreply.github.com
-:Revision: 1.0
+:Revision: 1.1
 :description: English ZXUno4All Manual
 :keywords: Manual, English, ZXUno4All
 :icons: font
@@ -163,7 +163,6 @@ FAT16 partitions have a maximum size of 4GB
 ====
 When naming a partition which will be used with esxdos, it's important not to use the same of any directory inside, or an access error will happen when trying to see the contents (e.g. do not name the partition as `BIN`, `SYS` or `TMP`).
 ====
-
 
 [TIP]
 ====
@@ -335,8 +334,8 @@ Disk /dev/sdc
 Disklabel type: dos
 Disk identifier
 
-Device Boot Start End Sectors Size Id Type
-/dev/sdc1 62 31116288 31116288 984,9M 6 FAT16
+Device     Boot   Start     End  Sectors   Size Id Type
+/dev/sdc1           62 31116288  31116288 984,9M 6 FAT16
 ----
 
 Format the FAT partition (requires root permissions)
@@ -543,7 +542,7 @@ The Advanced configuration screen is used to edit the following settings:
 
 - Keyboard layout (Keyb Layout): See <<#_keyboard,the corresponding section>> for more information)
 - Joystick behavior when emulated with the numeric keypad (Joy Keypad): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek or Fuller
-- Behavior of a joystick connected to the port (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller or simulate the keys `Q`,` A`, `O`,` P`, `Space` and `M`
+- Behavior of a joystick connected to a port (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller or simulate the keys `Q`,` A`, `O`,` P`, `Space` and `M`
 - Video output: PAL, NTSC or VGA
 - Scanlines simulation: Enabled or Disabled
 - VGA horizontal frequency: 50, 51, etc.
@@ -552,7 +551,7 @@ The Advanced configuration screen is used to edit the following settings:
 
 This table explains how the joystick buttons are assigned:
 
-[align="center",width="100%",%header,cols=6*,options="header"]
+[align="center",width="100%",%header,cols=7*,options="header"]
 |===
 |Button
 |Kempston
@@ -560,42 +559,49 @@ This table explains how the joystick buttons are assigned:
 |Sinclair 2
 |Protek
 |Fuller
+|QAOPSpcM
 |Left
 |Bit 0
 |1
 |6
 |5
 |Bit 2
+|`O`
 |Right
 |Bit 1
 |2
 |7
 |8
 |Bit 3
+|`P`
 |Down
 |Bit 2
 |3
 |8
 |6
 |Bit 1
+|`A`
 |Up
 |Bit 3
 |4
 |9
 |7
 |Bit 0
+|`Q`
 |Fire 1
 |Bit 4
 |5
 |0
 |0
 |Bit 4
+|`Space`
 |Fire 2
 |Bit 5
 |X
 |Z
 |9
 |Bit 5
+|`M`
 |===
 
 <<<
@@ -914,13 +920,13 @@ Partition offset [0 - 31116288]: [9829784]
 Partition size [1 - 21286504]: [21286504]
 
 fdisk:*1> print
- Starting Ending
- #: id cyl hd sec - cyl hd sec [ start - size]
+         Starting       Ending
+ #: id  cyl  hd sec -  cyl  hd sec [     start -       size]
 ------------------------------------------------------------------------
- 1: 7F 1023 254 63 - 1023 254 63 [ 128 - 2017152] <Unknown ID>
- 2: 06 1023 254 63 - 1023 254 63 [ 2017280 - 7812504] DOS > 32MB
- 3: 0B 1023 254 63 - 1023 254 63 [ 9829784 - 21286504] Win95 FAT-32
- 4: 00 0 0 0 - 0 0 0 [  0 -  0] unused
+ 1: 7F 1023 254  63 - 1023 254  63 [       128 -    2017152] <Unknown ID>
+ 2: 06 1023 254  63 - 1023 254  63 [   2017280 -    7812504] DOS > 32MB
+ 3: 0B 1023 254  63 - 1023 254  63 [   9829784 -   21286504] Win95 FAT-32
+ 4: 00    0   0   0 -    0   0   0 [         0 -          0] unused
 
 fdisk:*1> write
 fdisk: 1> quit
@@ -948,11 +954,11 @@ diskutil list
 ----
 (...)
 /dev/disk6 (external, physical):
- #: TYPE NAME SIZE IDENTIFIER
- 0: FDisk_partition_scheme *15.9 GB disk6
- 1: 0x7F 1.0 GB disk6s1
- 2: DOS_FAT_16 ZXUNOPLUS 4.0 GB disk6s2
- 3: DOS_FAT_32 EXTRA 10.9 GB disk6s3
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *15.9 GB    disk6
+   1:                       0x7F                         1.0 GB     disk6s1
+   2:                 DOS_FAT_16 ZXUNOPLUS               4.0 GB     disk6s2
+   3:                 DOS_FAT_32 EXTRA                   10.9 GB    disk6s3
 ----
 
 ==== Linux
@@ -968,10 +974,10 @@ For this example, it will be `sdc`:
 
 [source]
 ----
-NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 (..)
-sdc 179:0 0 15,8G 0 disk
-└─sdc1 179:1 0 15,8G 0 part
+sdc          179:0    0 15,8G  0 disk
+└─sdc1       179:1    0 15,8G  0 part
 ----
 
 <<<
@@ -1051,10 +1057,10 @@ Disk /dev/sda
 Disklabel type: dos
 Disk identifier
 
-Device    Boot Start   End     Sectors  Size    Id Type
-/dev/sda1      128     2017152 2017025  984,9M 7f  unknown
-/dev/sda2 *    2017280 7626751 7812504     2,7G  b FAT16
-/dev/sda3      9829784 7626751 21286504     21G  b W95 FAT32
+Device     Boot   Start     End  Sectors   Size Id Type
+/dev/sda1           128 2017152  2017025 984,9M 7f unknown
+/dev/sda2  *    2017280 7626751  7812504   2,7G  b FAT16
+/dev/sda3       9829784 7626751 21286504    21G  b W95 FAT32
 ----
 
 [start=2]
@@ -1078,12 +1084,12 @@ lsblk
 
 [source]
 ----
-NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+NAME      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 (...)
-sda 179:0 0 15,8G 0 disk
-├─sda1 179:1 0 1G 0 part
-├─sda2 179:2 0 4G 0 part
-├─sda3 179:3 0 10,8G 0 part
+sda      179:0    0 15,8G  0 disk
+├─sda1   179:1    0    1G  0 part
+├─sda2   179:2    0    4G  0 part
+├─sda3   179:3    0 10,8G  0 part
 ----
 
 ==== +3e
@@ -1242,7 +1248,7 @@ FTP cliente developed by Yombo, available https://github.com/yomboprime/FTP_Uno[
 Configuration steps:
 
 . Edit `FTP.CFG` file with all the required information (SSID and password, FTP server, etc.)
-. Copy `FTP.CFG` inside `/SYS/CONFIG/` in microSD card
+. Copy `FTP.CFG` inside `/SYS/CONFIG/` in SD card
 . Also copy `ftpUno.tap` to any place in the card
 . Start up the ZX-Uno and load the tape file `ftpUno.tap`
 
@@ -1670,13 +1676,13 @@ Obtain the TBBlue distribution that matches the core version, for example, looki
 ----
  /
  +-TBBLUE/
- | +-128.rom
- | (...)
- | +-config.ini
- | (...)
- | +-esxmmc.rom
- | (...)
- |
+   |  +-128.rom
+   |  (...)
+   |  +-config.ini
+   |  (...)
+   |  +-esxmmc.rom
+   |  (...)
+   |
  +-TBBLUE.FW
 ----
 
@@ -1718,7 +1724,6 @@ Then, pressing `E`, you can access to the other core configuration options. You 
 [.text-center]
 image:img/tbblue2.jpg[pdfwidth=70%]
 
-
 <<<
 
 === Acorn Atom
@@ -1738,26 +1743,26 @@ You can set up the files in the SD in two different ways:
 . Have less files an directories in the root directory. Create a directory named `ATOM` in the SD root, and copy inside all the uncompressed archive content, except for the directory `MANPAGES` which must also be in root. Then, extract and the files from `trick_ATOM_folder` archive (available https://www.zxuno.com/forum/viewtopic.php?f=16&t=4006[at ZX-Uno Forum]), replacing any file with the same name. You will get a file and directory structure like this:
 
 ----
- /
- +-ATOM/
- | +-AA/
- | (...)
- | +-AGD/
- | | +-SHOW2
- | | +-SHOW3
- | (...)
- | +-MENU
- | (...)
- | +-TUBE/
- | | +-BOOT6502
- | (..)
- |
- +-MANPAGES/
- | +-CPM.MAN
- | +-FLEX.MAN
- | (...)
- |
- +-MENU
+        /
+        +-ATOM/
+        |  +-AA/
+        |  (...)
+        |  +-AGD/
+        |  | +-SHOW2
+        |  | +-SHOW3
+        |  (...)
+        |  +-MENU
+        |  (...)
+        |  +-TUBE/
+        |  | +-BOOT6502
+        |  (..)
+        |
+        +-MANPAGES/
+        |  +-CPM.MAN
+        |  +-FLEX.MAN
+        |  (...)
+        |
+        +-MENU
 ----
 
 <<<
@@ -1782,6 +1787,8 @@ The keyboard uses the following mapping:
 
 [.text-center]
 image:img/keyboardAtom.jpg[pdfwidth=90%]
+
+<<<
 
 ==== Basic Guide
 
@@ -1873,6 +1880,8 @@ To load using the audio input:
 *TAPE
 CHAIN""
 ----
+
+<<<
 
 And then start playing the external audio device.
 
@@ -2106,7 +2115,7 @@ sudo dd if=apple2_20discs.img of=/dev/...
 
 [WARNING]
 ====
-Some versions of this core do not initialize properly the keyboard when using only a membrane keybard. You have to cold boot the ZXUnGo+ with a PS/2 keyboard attached.
+Some versions of this core do not initialize properly the keyboard when using only a membrane keyboard. You have to cold boot the ZXUnGo+ with a PS/2 keyboard attached.
 ====
 
 ===== Special keys and buttons
@@ -2292,7 +2301,7 @@ The following options are available:
 
 The https://en.wikipedia.org/wiki/BBC_Micro[BBC Micro], was a series of microcomputers and associated peripherals designed and built by the Acorn Computer company in the 1980s for the BBC Computer Literacy Project, operated by the British Broadcasting Corporation.
 
-The ZX-Uno core has been made by Ques and enhanced after by azesmbog and hoglet.
+The ZX-Uno core has been made by Quest and enhanced after by azesmbog and hoglet.
 
 Some of its features are:
 
@@ -2485,7 +2494,7 @@ The CHIP-8 machine uses an hexadecimal keyboard as input. This is the key mappin
 
 [WARNING]
 ====
-Some versions of this core do not initialize properly the keyboard when using only a membrane keybard. You have to cold boot the ZXUnGo+ with a PS/2 keyboard attached.
+Some versions of this core do not initialize properly the keyboard when using only a membrane keyboard. You have to cold boot the ZXUnGo+ with a PS/2 keyboard attached.
 ====
 
 ===== Special keys and buttons
@@ -2506,7 +2515,6 @@ Pressing `Esc` (`Caps Shift+Space` on ZXUnGo+) shows or hides the configuration 
 
 [.text-center]
 image:img/chip8uno.jpg[pdfwidth=70%]
-
 
 The following options are available:
 
@@ -2675,7 +2683,7 @@ Concatenate the disk images using `cat`:
 
 [source,shell]
 ----
-cat imagen1.d64 dummyto256.bin imagen2.d64 dummyto256.bin (...) > c16rawsd.img
+cat image1.d64 dummyto256.bin image2.d64 dummyto256.bin (...) > c16rawsd.img
 ----
 
 Dump the new file to the SD card, using `dd`:
@@ -2780,7 +2788,7 @@ Concatenate the disk images using `COPY`:
 
 [source,shell]
 ----
-COPY /B imagen1.d64 + dummyto256.bin + imagen2.d64 + dummyto256.bin + (...) c64rawsd.img
+COPY /B image1.d64 + dummyto256.bin + image2.d64 + dummyto256.bin + (...) c64rawsd.img
 ----
 
 Dump the new file to the SD card, for example, using http://hddguru.com/software/HDD-Raw-Copy-Tool/[HDD Raw Copy Tool].
@@ -2791,7 +2799,7 @@ Concatenate the disk images using `cat`:
 
 [source,shell]
 ----
-cat imagen1.d64 dummyto256.bin imagen2.d64 dummyto256.bin (...) > c64rawsd.img
+cat image1.d64 dummyto256.bin image2.d64 dummyto256.bin (...) > c64rawsd.img
 ----
 
 Dump the new file to the SD card, using `dd`:
@@ -3508,7 +3516,7 @@ For more informatio you can see http://www.retrowiki.es/viewtopic.php?f=110&t=20
 
 ==== SD card format
 
-This core does not use the SD card
+This core does not use the SD card.
 
 <<<
 
@@ -3576,68 +3584,6 @@ To save a BASIC program with the audio output, you can use the command `CSAVE "N
 
 <<<
 
-=== Pong
-
-Pong was https://en.wikipedia.org/wiki/Pong[one of the earliest arcade video games] manufactured by Atari.
-
-The latest ZX-Uno core has been made by avlixa, and some of its features are:
-
-- Two different video modes: Composite Video/RGB and VGA
-- 7 game variants
-- Support for 2 or 4 players
-- Support for Joysticks, keyboard, mouse and rotary encoder controls
-- Several colour modes
-
-==== SD format
-
-This core does not use the SD card.
-
-==== Keyboard
-
-===== Special keys and buttons
-
-The following ZXUnGo+ keyboard combinations are obtained while in any keyboard mode except the normal `ZX` mode. Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
-
-While the core is running:
-
-- `Esc` (`Caps Shift+Space` on ZXUnGo+) or joystick button 2: Show or hide configuration menu
-- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` and then `B` on ZXUnGo+) or `F11` (`Caps Shift+Symbol Shift+Q` on ZXUnGo+): Hard reset. Backspace is the delete key, located in the top-right portion of the keyboard, above `Enter`
-
-- `F3` (`Caps Shift+Symbol Shift+3` on ZXUnGo+) or `F12` (`Caps Shift+Symbol Shift+W` on ZXUnGo+): Restart game
-- Number between `1` and `7`: Change the game variant
-- Joystick 2 (right): Control right pad (Player 1).
-- Joystick 1 (left): Control left pad (Player 2)
-- `Cursor up` and `Cursor down` (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) or `O` and `K`: Control right pad (Player 1 in 2 player mode and player 3 in 4 player mode)
-- `Q` and `A`: Control left pad (Player 2 in 2 player mode and player 4 in 4 player mode)
-- `Z`, `M` or joystick button 1: Manual serve
-- Cursor keys (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) and `Enter` to use the menu
-
-<<<
-
-==== Basic Guide
-
-Pressing `Esc` (`Caps Shift+Space` on ZXUnGo+) or joystick button 2 shows or hides the configuration menu. Cursor keys (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) and `Enter` to select and choose menu options.
-
-[.text-center]
-image:img/ponguno.jpg[pdfwidth=70%]
-
-The following options are available:
-
-- Serve mode
-- Ball Angle
-- Ball Speed
-- Paddle Size
-- Sound
-- Number of players
-- Speed mode
-- Angle mode
-- Joystick, mouse, etc. controls
-- Paddle accuracy
-- Colour mode
-- Exit
-
-<<<
-
 === PC XT
 
 https://www.zxuno.com/forum/viewforum.php?f=56[Next186lite] core is an implementation of http://flea.vieju.net/?page_id=20[Next186] core for FleaFPGA and Papilio Pro, pero adapted and trimmed.
@@ -3657,13 +3603,6 @@ Features:
 ==== SD card format
 
 You have to use a SDHC card, with the first partition in FAT16 format and with MS-DOS (or similar) installed. You can achieve this using, for example, virtualization software and connecting directly de SD card device as a hard disk. You can also find several pre-made images at https://www.zxuno.com/forum/viewforum.php?f=56[ZX-Uno forum page] and https://www.forofpga.es/viewtopic.php?f=37&t=120[ZXDOS+ forums].
-
-
-
-
-
-
-
 
 Once partitioned and formatted (with a reserve at the end, see later), you have to save the BIOS image `Next186_BIOS_zxdos_ddr3.COM` (available https://github.com/zxdos/sources/raw/master/next186_zxdos_ddr3/software/Next186_BIOS_zxdos_ddr3.COM[at this link]) in the last 16 sectors of the SD card.
 
@@ -3773,6 +3712,68 @@ On a ZXUnGo+, it's not recommended to use the `PC XT` keyboard mode with a PS/2 
 
 <<<
 
+=== Pong
+
+Pong was https://en.wikipedia.org/wiki/Pong[one of the earliest arcade video games] manufactured by Atari.
+
+The latest ZX-Uno core has been made by avlixa, and some of its features are:
+
+- Two different video modes: Composite Video/RGB and VGA
+- 7 game variants
+- Support for 2 or 4 players
+- Support for Joysticks, keyboard, mouse and rotary encoder controls
+- Several colour modes
+
+==== SD format
+
+This core does not use the SD card.
+
+==== Keyboard
+
+===== Special keys and buttons
+
+The following ZXUnGo+ keyboard combinations are obtained while in any keyboard mode except the normal `ZX` mode. Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
+
+While the core is running:
+
+- `Esc` (`Caps Shift+Space` on ZXUnGo+) or joystick button 2: Show or hide configuration menu
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` and then `B` on ZXUnGo+) or `F11` (`Caps Shift+Symbol Shift+Q` on ZXUnGo+): Hard reset. Backspace is the delete key, located in the top-right portion of the keyboard, above `Enter`
+
+- `F3` (`Caps Shift+Symbol Shift+3` on ZXUnGo+) or `F12` (`Caps Shift+Symbol Shift+W` on ZXUnGo+): Restart game
+- Number between `1` and `7`: Change the game variant
+- Joystick 2 (right): Control right pad (Player 1).
+- Joystick 1 (left): Control left pad (Player 2)
+- `Cursor up` and `Cursor down` (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) or `O` and `K`: Control right pad (Player 1 in 2 player mode and player 3 in 4 player mode)
+- `Q` and `A`: Control left pad (Player 2 in 2 player mode and player 4 in 4 player mode)
+- `Z`, `M` or joystick button 1: Manual serve
+- Cursor keys (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) and `Enter` to use the menu
+
+<<<
+
+==== Basic Guide
+
+Pressing `Esc` (`Caps Shift+Space` on ZXUnGo+) or joystick button 2 shows or hides the configuration menu. Cursor keys (`Caps Shift+6` and `Caps Shift+7` on ZXUnGo+) and `Enter` to select and choose menu options.
+
+[.text-center]
+image:img/ponguno.jpg[pdfwidth=70%]
+
+The following options are available:
+
+- Serve mode
+- Ball Angle
+- Ball Speed
+- Paddle Size
+- Sound
+- Number of players
+- Speed mode
+- Angle mode
+- Joystick, mouse, etc. controls
+- Paddle accuracy
+- Colour mode
+- Exit
+
+<<<
+
 === SAM Coupé
 
 The https://en.wikipedia.org/wiki/SAM_Coupé[SAM Coupé] was an 8-bit British home computer that was first released in late 1989. It was designed to have compatibility with the Sinclair ZX Spectrum, but in 48K mode only.
@@ -3837,7 +3838,7 @@ See the <<#_cores,corresponding section>> for instructions of how to install the
 
 ===== Special keys and buttons
 
-While the core is running
+While the core is running:
 
 - Cursor or `Q`, `A`, `O`, `P` or joystick 1: Directional controls for player 1
 - `Z`, `Windows` or joystick 1 main fire button: Fire Button 1 for player 1
@@ -3875,7 +3876,6 @@ See the <<#_cores,corresponding section>> for instructions of how to install the
 <<<
 
 === Vectrex
-
 
 The https://en.wikipedia.org/wiki/Vectrex[Vectrex] was a vector display-based home video game console. It also had an integrated monochrome CRT monitor.
 
@@ -3944,7 +3944,7 @@ Some features of the core are:
 - RGB and VGA support
 - Needs at least one joystick to be used
 - Different colour modes including monochrome
-- loadable VDC ROM charset for some custom roms
+- loadable VDC ROM charset for some custom ROMs
 
 ==== SD card format
 
@@ -3972,7 +3972,7 @@ During the core execution:
 
 ==== Basic Guide
 
-Pressing `Esc` or joystick button 2 shows or hides the configuration menu. Cursor keys and `Enter` to select and choose menu options.
+Pressing `Esc` (`Caps Shift+Space` on ZXUnGO+) or joystick button 2 shows or hides the configuration menu. Cursor keys and `Enter` to select and choose menu options.
 
 [.text-center]
 image:img/videopacuno.png[pdfwidth=70%]
@@ -4272,6 +4272,8 @@ https://www.alessandrogrussu.it/tapir/index.html[Tapir] is a GUI program for Win
 `tsx2wav` in https://github.com/nataliapc/MSX_devs/tree/master/TSXphpclass[TSXphpclass] is made with PHP and that can export from `TSX` to `WAV`.
 
 https://sourceforge.net/projects/wav-prg/files/audiotap/2.2/[Audiotap] is a graphical interface program made for Windows (but also working on Wine) that can convert Commodore `TAP` files to `WAV` audio files.
+
+http://retrowiki.es/viewtopic.php?f=110&t=200037282[Comodoro 2.0] it's a script which can convert to `TAP` and `TZX` files for Commodore Pet, VIC-20, 16 and 64.
 
 https://github.com/RW-FPGA-devel-Team/lynx2wav[Lynx2Wav] is a program that can convert Camputers Lynx `TAP` files to `WAV` audio.
 
@@ -4633,7 +4635,7 @@ This process can't be undone, and it will replace all the previously installed c
 
 [NOTE]
 ====
-Ususally, the recovery image is set to use a PS/2 keyboard so, for a ZXUnGo+, some key combinations, like `Caps Shift + 5`, etc may not work. In this case, you have to change the keyboard to any mode except the normal `ZX` (please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information) to make them work temporarily.
+Usually, the recovery image is set to use a PS/2 keyboard so, for a ZXUnGo+, some key combinations, like `Caps Shift + 5`, etc may not work. In this case, you have to change the keyboard to any mode except the normal `ZX` (please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information) to make them work temporarily.
 ====
 
 [start=15]
@@ -4658,13 +4660,12 @@ For a ZXUnGo+, since the recovery image uses a PS/2 configuration as default, fo
 - `Advanced` -> `Video`: `VGA`  (only if there was no image)
 . Save changes:
 - `Exit` -> `Save changes and exit`
-. Completely turn off gomaDOS` and turn it on again
+. Completely turn off the ZX-Uno and turn it on again
 ====
-
 
 [NOTE]
 ====
-If no image is shown, press again `Scroll Lock` to switch between RGB and VGA modes. In this case, you should have to enter the BIOS and change <<#_advanced, the right advanced setting>> that matches your display.
+If no image is shown, press again `Scroll Lock` (`Caps Shift+Symbol Shift+Y` on ZXUnGo+) to switch between RGB and VGA modes. In this case, you should have to enter the BIOS and change <<#_advanced, the right advanced setting>> that matches your display.
 ====
 
 <<<
@@ -4707,7 +4708,7 @@ sudo make install
 ----
 
 [start=4]
-. Copy `FLASH.ZX1` file to the root of the ZX-Uno microSD card.
+. Copy `FLASH.ZX1` file to the root of the ZX-Uno SD card.
 
 . Connect USB-Blaster cable to ZX-Uno and the Mac
 
@@ -4746,7 +4747,7 @@ If there is no image on the display, press `Scroll Lock` (`Caps Shift+Symbol Shi
 image:img/recovery.png[pdfwidth=70%]
 
 [start=10]
-. Insert in the ZX-Uno the microSD card formatted as FAT16 o FAT32, and with the `FLASH.ZX1` file https://github.com/zxdos/zxuno/raw/master/modflash/FLASH.ZX1[downloaded previously].
+. Insert in the ZX-Uno the SD card formatted as FAT16 o FAT32, and with the `FLASH.ZX1` file https://github.com/zxdos/zxuno/raw/master/modflash/FLASH.ZX1[downloaded previously].
 
 . Unplug the USB-Blaster.
 
@@ -4790,7 +4791,7 @@ For a ZXUnGo+, since the recovery image uses a PS/2 configuration as default, fo
 - `Advanced` -> `Video`: `VGA`  (only if there was no image)
 . Save changes:
 - `Exit` -> `Save changes and exit`
-. Completely turn off the ZXUnGo+ and turn it on again
+. Completely turn off the ZX-Uno and turn it on again
 ====
 
 [NOTE]
@@ -4805,7 +4806,7 @@ When using Linux with `urjtag`, the process should be quite similar, although th
 *Hardware required*:
 
 - USB-Blaster cable. Using the right pins for ZXUnCore, <<#_jtag_cable_connections,as explained earlier>>
-- Flash Image file and and recovery file for ZX-Uno. The same ones as for Raspberry Pi, from the https://github.com/zxdos/zxuno/tree/master/modflash[official repository]
+- Flash Image file and and recovery file for ZX-Uno. The same ones as for Raspberry Pi, from the https://github.com/zxdos/zxuno/tree/master/modflash[GitHub repository] and https://www.zxuno.com/forum/viewtopic.php?f=37&t=774[ZX-Uno forum]
 
 *Software required*:
 
@@ -4821,7 +4822,7 @@ When using Linux with `urjtag`, the process should be quite similar, although th
 
 . Extract UrJTAG Windows software, obtained at the https://github.com/zxdos/zxdos-plus/blob/master/lx25/urjtag.zip[official repository]
 
-. Copy `FLASH.ZX1` file to the root of the ZX-Uno microSD card.
+. Copy `FLASH.ZX1` file to the root of the ZX-Uno SD card.
 
 . Connect USB-Blaster cable to ZXUnCore and the PC
 
@@ -4835,7 +4836,7 @@ When using Linux with `urjtag`, the process should be quite similar, although th
 ----
 cable usbblaster
 detect
-pld load recovery.zxd.bit
+pld load recovery.bit
 ----
 
 <<<
@@ -4849,7 +4850,7 @@ If there is no image on the display, press `Scroll Lock` (`Caps Shift+Symbol Shi
 image:img/recovery.png[pdfwidth=70%]
 
 [start=10]
-. Insert in the ZX-Uno the microSD card formatted as FAT16 or FAT32, and with the `FLASH.ZX1` file https://github.com/zxdos/zxuno/raw/master/modflash/FLASH.ZX1[downloaded previously].
+. Insert in the ZX-Uno the SD card formatted as FAT16 or FAT32, and with the `FLASH.ZX1` file https://github.com/zxdos/zxuno/raw/master/modflash/FLASH.ZX1[downloaded previously].
 
 . Unplug the USB-Blaster.
 
@@ -4893,7 +4894,7 @@ For a ZXUnGo+, since the recovery image uses a PS/2 configuration as default, fo
 - `Advanced` -> `Video`: `VGA`  (only if there was no image)
 . Save changes:
 - `Exit` -> `Save changes and exit`
-. Completely turn off gomaDOS` and turn it on again
+. Completely turn off the Zx-Uno and turn it on again
 ====
 
 <<<
@@ -4939,7 +4940,11 @@ https://worldofspectrum.org/zxplus3e/sharingdisks.html[Sharing a +3e disk with P
 
 https://www.zxuno.com/forum/viewtopic.php?f=37&t=208[Configuración de teclado de ZX-Uno].
 
+https://github.com/spark2k06/zxunops2/blob/master/Alternative/Nuevo%20firmware%20de%20teclado%20ZX-GO%2B.pdf[Firmware de teclado para ZX Go+]
+
 https://docs.google.com/spreadsheets/d/17-ifpHcy932_AP7SAv9uBLxg-2ZptcdgTvQ8ILXQLM4/htmlview[Almost (In-) Complete List of esxDOS DOT-Commands]
+
+http://www.benophetinternet.nl/hobby/vanmezelf/ESXDOS%20manual.pdf[ESXDOS Manual]
 
 http://retrowiki.es/viewtopic.php?f=83&t=200032578&p=200075671&hilit=wifi#p200075671[WiFi (RetroWiki)]
 
@@ -5022,3 +5027,5 @@ http://retrowiki.es/viewtopic.php?f=31&t=200036835[Lince Script]
 https://catleytech.com/?p=2679[Programming a Spartan 6 with a Raspberry Pi]
 
 https://www.zxuno.com/forum/viewtopic.php?f=25&t=375[Tutorial para desbriquear el ZX-Uno con una Raspberry]
+
+https://www.forofpga.es/viewtopic.php?t=175[Como programar un UnAmiga con la Raspberry Pi (o Linux) con el USB-Blaster y OpenOCD]
