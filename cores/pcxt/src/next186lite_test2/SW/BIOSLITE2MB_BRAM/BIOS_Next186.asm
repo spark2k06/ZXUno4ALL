@@ -1146,12 +1146,12 @@ int10 proc near
         cmp     ah, 4fh
         je      short svga
         cmp     ah, 1ch
-        ja      short exit
+        ja      short exit11
         mov     si, ax
         shr     si, 7
         and     si, 1feh
         call    cs:vidtbl[si]
-exit:        
+exit11:
         pop     si
         pop     ds
         iret
@@ -1165,7 +1165,7 @@ svga:
         jb      short VESASetMode
         je      short VESAGetMode
         mov     ax, 100h
-        jmp     short exit
+        jmp     short exit11
 
 ; ---------------- VESA fn00
 VESAGetInfo:
@@ -1184,7 +1184,7 @@ VESASupported:
         mov     ah, 0       ; success    
 VESASupportedErr:
         mov     al, 4fh
-        jmp     short exit
+        jmp     short exit11
 
 ; ---------------- VESA fn01
 VESAGetModeInfo:
@@ -1734,7 +1734,8 @@ tty1:
         pop     cx
         ret
 bell:
-; TODO bell code        
+        mov	bl,6			; 0.2 second beep
+        call	beep
         jmp     short tty1
 bs:
         sub     dl, 1
@@ -2310,6 +2311,61 @@ querystatus3:
         mov     al, ah          ; supported function
         ret
 
+pit_ch2_reg	    equ	42h
+pit_ctl_reg	    equ	43h
+ppi_pb_reg	    equ	61h	; 8255 PPI port B I/O register
+        
+;=========================================================================
+; delay_15us - delay for multiplies of approximately 15 microseconds
+; Input:
+;	CX = time to delay (in 15 microsecond units)
+; Notes:
+;	This implementation does not provide precise timing
+;	The actual delay depends on the CPU clock frequency
+;-------------------------------------------------------------------------
+delay_15us:
+	push	ax
+	push	cx
+.delay1:
+	; mov	al,4	; With real PCXT at 4.77Mhz
+	mov	al,24	; With Next186 at 4.77Mhz
+.delay2:
+	dec	al
+	jnz	.delay2
+	loop	.delay1
+	pop	cx
+	pop	ax
+	ret
+
+;=========================================================================
+; beep - Play a beep sound
+; Input:
+;	BL - duration in 0.1 second
+; Output:
+;	BL = 0
+;-------------------------------------------------------------------------
+
+beep:
+	push	ax
+	mov	al,0B6h			; set PIC channel 2 to mode 3
+	out	pit_ctl_reg,al
+	mov	ax,1193			; approximately 1000 Hz
+	out	pit_ch2_reg,al		; load divisor's low byte to PIC
+	mov	al,ah
+	out	pit_ch2_reg,al		; load divisor's high byte to PIC
+	in	al,ppi_pb_reg		; read current value of PORT B
+	or	al,03h			; turn on the speaker
+	out	ppi_pb_reg,al		; write the new value
+.loop:
+	mov	cx,6666			; 0.1 second delay
+	call	delay_15us
+	dec	bl
+	jnz	.loop
+	xor	al,03h			; turn off the speaker
+	out	ppi_pb_reg,al		; write the new value
+	pop	ax
+	ret
+
 staticfunctable db  00001100b   ; video modes 2h, 3h supported
                 db  00100000b	; video mode 0dh supported
                 db  00001100b   ; video modes 12h, 13h supported
@@ -2391,7 +2447,7 @@ int13   proc near
         cmp     ah, 22h
         jbe     short Disk1
         mov     ah, 1           ; bad command error
-        jmp     short exit
+        jmp     short exit22
 inINT13:        
         mov     ah, 0aah        ; drive not ready
         jmp     short exit2
@@ -2402,7 +2458,7 @@ Disk1:
         push    ds
         call    cs:disktbl[bp]
         pop     ds
-exit:        
+exit22:
         mov     HDLastError, ah
 exit2:
         xor     byte ptr HDOpStarted, 8
@@ -3091,10 +3147,10 @@ int16 proc near
         cmp     al, 12h         ;Extended status call
         je      short ExtStatus
         cmp     al, 92h         ;stupid keyb.com 
-        jne     short Exit
+        jne     short exit3
 kbfunc:
         mov     al, 24h         ;AL=20h (fn 10h, 12h supported, set typematic supported)        
-Exit:        
+exit3:        
         pop     si
         pop     ds
         iret                    ; unknown function, Restores flags.
@@ -3113,7 +3169,7 @@ GetKey: ; ----------- fn 00h, 10h
         mov     si, Buffer
 noWrap:             
         mov     HeadPtr, si
-        jmp     short Exit
+        jmp     short exit3
 
 TestKey: ; ---------- fn 01h
         mov     si, HeadPtr
@@ -3135,10 +3191,10 @@ StoreKey: ; ---------- fn 05h - Inserts the value in CX into the type ahead buff
  NoWrap1:
         mov     al, 1           ;no room
         cmp     si, HeadPtr     ;Data overrun?
-        je      short Exit      ;if so, ignore key entry.
+        je      exit3      ;if so, ignore key entry.
         mov     TailPtr, si
         dec     ax              ;al=0
-        jmp     short Exit       
+        jmp     short exit3       
 
 ExtStatus: ; ------- fn 12h - Retrieve the extended keyboard status and return it in AH, and the standard keyboard status in AL.    
         mov     al, KbdFlags2
@@ -3153,12 +3209,12 @@ NoSysReq:
 
 GetStatus: ; --------- fn 02h     
         mov     al, KbdFlags1   ;Just return Std Status.
-Exit1:
-        jmp     short Exit
+exit111:
+        jmp     short exit3
 
 SetAutoRpt: ; ------ fn 03h
         cmp     ah, 5
-        jne     short Exit
+        jne     short exit3
         push    dx
         shl     bh, 5
         and     bl, 1fh
@@ -3184,7 +3240,7 @@ timeout1:
         and     byte ptr KbdFlags4, not SetRepeat   
 timeout:
         pop     dx
-        jmp     short Exit1
+        jmp     short exit111
 
 
 WaitFlag:   ; ah = desired KbdFlags4 & (AckReceived | LEDUpdate | SetRepeat)
@@ -3292,16 +3348,16 @@ int70 proc near
         push    40h
         pop     ds
         test    byte ptr UWaitFlag, 1    ; is wait in progress?
-        jz      short exit
+        jz      short exit4
         sub     word ptr WaitCount[0], 1000
         sbb     word ptr WaitCount[2], 0
-        jnc     short exit
+        jnc     short exit4
         mov     byte ptr UWaitFlag, 0
         push    bx
         lds     bx, UFPtr
         or      byte ptr [bx], 80h
         pop     bx
-exit: 
+exit4: 
         pop     ds
         iret
 int70 endp
@@ -3392,7 +3448,7 @@ sps2b2:
         and     al, 8h
         sub     bh, al
         jnc     short sps2b2; IBF - buffer full, no timeout
-        jmp     short exit  ; timeout, CF=1
+        jmp     short exit5  ; timeout, CF=1
 sps2b1:
         test    bl, bl      ; CF=0
         jz      short sps2_kb
@@ -3401,7 +3457,7 @@ sps2b1:
 sps2_kb:
         mov     al, ah
         out     60h, al     ; send byte
-exit:        
+exit5:        
         pop     dx
         ret
 sendps2byte endp
@@ -3429,13 +3485,13 @@ getps2byte endp
 sendcmd proc near     ; ah = command, CF=1 for mouse, CF=0 for kb. returns CF=1 on error
         sbb     bl, bl      ; bl <- CF
         call    sendps2byte 
-        jc      short exit
+        jc      short exit6
 retry:        
         call    getps2byte
-        jc      short exit        
+        jc      short exit6        
         cmp     al, 0fah    ; ack (returns CF=1 on error, when al=8)
         jne     short retry
-exit:
+exit6:
         ret
 sendcmd endp
 
@@ -3640,6 +3696,13 @@ sdverify:
         push    sdvblk
         jmp     short sdread1
 sdread:   ; DX:AX sector, ES:BX buffer, CX=sectors. returns AX=read sectors
+        cmp     byte ptr cs:[sdtype], 1
+        jz      short sdhc1
+        push    cx
+        mov     cx, 200h
+        mul     cx ; DX: AX * 512 for compatibility with SD standard (without HC)        
+        pop     cx
+sdhc1:       
         push    sdrblk   ; push proc address (read or verify) on stack
 sdread1:        
         push    ax
@@ -3713,6 +3776,14 @@ sdr1:
 
 ;---------------------  write ----------------------
 sdwrite:   ; DX:AX sector, ES:BX buffer, CX=sectors, returns AX=wrote sectors
+        cmp     byte ptr cs:[sdtype], 1
+        jz      short sdhc2
+        push    cx
+        mov     cx, 200h
+        mul     cx ; DX: AX * 512 for compatibility with SD standard (without HC)        
+        pop     cx
+sdhc2: 
+        
         push    ax
         mov     al, dl
         push    ax
@@ -3768,7 +3839,7 @@ sdwwait:
         jnz     short sdwms       ; multiple sectors
 
         cmp     bp, 1
-        je      short sdr1
+        je      sdr1
         mov     al, 0fdh     ; multiple end transfer
         call    sdsb 
 		call	sdrb     
@@ -3799,7 +3870,7 @@ sdinit1:                   ; send 80T
         pop     ds
         call    sdcmd
         dec     ah
-        jnz     short sdexit ; error
+        jnz     sdexit ; error
         
         mov     si, offset SD_CMD8
         call    sdcmd8T
@@ -3834,11 +3905,13 @@ repinit:
         push    ss
         pop     ds
         call    sdrblk
-        pop     ax
+        pop     ax        
+        mov     byte ptr cs:[sdtype], 0
         test    al, 40h     ; test OCR bit 30 (CCS)
         pop     ax
-        jz      short sdexit; no SDHC
-
+        jz      short standard_sd        
+        mov     byte ptr cs:[sdtype], 1
+standard_sd:
         mov     si, offset SD_CMD9 ; get size info
         push    cs
         pop     ds
@@ -3854,6 +3927,9 @@ repinit:
         push    ss
         pop     ds
         call    sdrblk
+        
+        cmp     byte ptr cs:[sdtype], 1
+        jnz     short getsize_standard_sd
         mov     cx, [di-10]
         rol     cx, 8
         inc     cx
@@ -3869,6 +3945,46 @@ sdexit:
         pop     cx
         pop     ds
         ret
+
+getsize_standard_sd: 
+
+; TODO
+
+; Improve this routine to get READ_BL_LEN and C_SIZE_MULT from CSD, references:
+
+; https://www.ele.uva.es/~jesman/BigSeti/ftp/Componentes/Memoria%20SD%20o%20MMC/SD%20Card.pdf
+; https://archive.goughlui.com/static/csdecode.htm
+; https://www.fatalerrors.org/a/sd-card-initialization-and-command-details.html
+
+; CSD lengh: 16 bytes
+; CSD offset 0: [di-18]
+
+; With the current result of C_SIZE + 1 (now CX) obtain the total size in bytes using the following formula: TOTAL_SIZE_BYTES = (C_SIZE + 1) x READ_BL_LEN x C_SIZE_MULT
+
+; Finally perform the following operation: TOTAL_SIZE_MB = (TOTAL_SIZE_BYTES / 1024/1024) x 2
+; Save the result again in CX before finishing, with which we will always obtain a correct result for standard SD cards.
+
+        mov     dx, [di-12]
+        mov     cl, 10
+        and     dx, 3
+        shl     dx, cl
+        mov     ax, [di-11]
+        mov     cl, 2
+        shl     ax, cl
+        and     ah, 3
+        add     dx, ax
+        mov     al, [di-10]
+        mov     cl, 6
+        shr     al, cl
+        xor     ah, ah
+        add     dx, ax
+        inc     dx
+        mov     cx, dx
+        mov     sp, di
+        mov     dx, 3dah
+        jmp     short sdexit
+
+
 sdinit endp
     
 SD_CMD0     db  40h, 0, 0, 0, 0, 95h
@@ -4056,6 +4172,7 @@ KeyCode:
         dw	4600h, 4600h, 4600h, 4600h ;7e - SCRL <89>
         dw	4100h, 5a00h, 6400h, 6e00h ;83 - F7 <90>
 
+sdtype  db  00h                             ; 00h -> SD, 01h -> SDHC
 ; ------------------------- POWER ON RESET -----------------------
         org     0fff0h
         
