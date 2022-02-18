@@ -1,6 +1,6 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.1.1
+:revnumber: 1.2.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -55,7 +55,7 @@ Without the previous work of all of these people (and more), this manual wouldn'
 
 ==== ZXUnCore
 
-Main module, and the base for other modules. It's basicallya a stripped ZX-Uno with the basic hardware and as a module. It's main features are:
+Main module, and the base for other modules. It's basically a a stripped ZX-Uno with the basic hardware and as a module. It's main features are:
 
 - RGB666 Video DAC support
 - Integrated SRAM memory (512Kb or 2Mb).
@@ -92,7 +92,6 @@ image:./img/ZXUnGoPlus_02.jpg[pdfwidth=80%]
 <<<
 
 === Ports and Connectors
-
 
 [.text-center]
 image:./img/ZXUnGoPlus_Puertos.png[pdfwidth=90%]
@@ -234,7 +233,7 @@ For example, to format a card, shown as `disk6`, with only one FAT16 partition (
 [source,shell]
 ----
 diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT16" ZXUNOPLUS R
+diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT16" ZXUNCORE R
 ----
 
 To split it into two FAT16 partitions of the same size (if the card size is 4GB or less):
@@ -242,7 +241,7 @@ To split it into two FAT16 partitions of the same size (if the card size is 4GB 
 [source,shell]
 ----
 diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT16" ZXUNOPLUS 50% "MS-DOS FAT16" EXTRA 50%
+diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT16" ZXUNCORE 50% "MS-DOS FAT16" EXTRA 50%
 ----
 
 To create two FAT 16 partitions (e.g. to use MSX core) and have the rest of space as another FAT32 partition (for cards more than 8GB in size):
@@ -250,8 +249,8 @@ To create two FAT 16 partitions (e.g. to use MSX core) and have the rest of spac
 [source,shell]
 ----
 diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR %DOS_FAT_16% ZXUNOPLUS 4G %DOS_FAT_16% EXTRA 4G "MS-DOS FAT32" DATA R
-sudo newfs_msdos -F 16 -v ZXUNOPLUS -c 128 /dev/rdisk6s1
+diskutil partitionDisk /dev/disk6 MBR %DOS_FAT_16% ZXUNCORE 4G %DOS_FAT_16% EXTRA 4G "MS-DOS FAT32" DATA R
+sudo newfs_msdos -F 16 -v ZXUNCORE -c 128 /dev/rdisk6s1
 sudo newfs_msdos -F 16 -v EXTRA -b 4096 -c 128 /dev/rdisk6s2
 ----
 
@@ -265,7 +264,7 @@ To create one FAT32 4GB partition (e.g. to use with Amstrad CPC 6128 core), and 
 [source,shell]
 ----
 diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT32" ZXUNOPLUS 4G "MS-DOS FAT32" EXTRA R
+diskutil partitionDisk /dev/disk6 MBR "MS-DOS FAT32" ZXUNCORE 4G "MS-DOS FAT32" EXTRA R
 ----
 
 [NOTE]
@@ -938,7 +937,7 @@ fdisk: 1> quit
 [source,shell]
 ----
 diskutil unmountDisk /dev/disk6
-sudo newfs_msdos -F 16 -v ZXUNOPLUS -c 128 /dev/rdisk6s2
+sudo newfs_msdos -F 16 -v ZXUNCORE -c 128 /dev/rdisk6s2
 sudo newfs_msdos -F 32 -v EXTRA -c 128 /dev/rdisk6s3
 ----
 
@@ -957,7 +956,7 @@ diskutil list
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *15.9 GB    disk6
    1:                       0x7F                         1.0 GB     disk6s1
-   2:                 DOS_FAT_16 ZXUNOPLUS               4.0 GB     disk6s2
+   2:                 DOS_FAT_16 ZXUNCORE               4.0 GB     disk6s2
    3:                 DOS_FAT_32 EXTRA                   10.9 GB    disk6s3
 ----
 
@@ -1068,7 +1067,7 @@ Device     Boot   Start     End  Sectors   Size Id Type
 
 [source,shell]
 ----
-sudo mkfs.fat -F 16 -n ZXUNOPLUS -s 128 /dev/sdc2
+sudo mkfs.fat -F 16 -n ZXUNCORE -s 128 /dev/sdc2
 sudo mkfs.fat -F 32 -n EXTRA -s 128 /dev/sdc3
 ----
 
@@ -1639,7 +1638,6 @@ While the core is running:
 - `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` and then `B` on ZXUnGo+): Hard reset. Backspace is the delete key, located in the top-right portion of the keyboard, above `Enter`.
 - `Ctrl+Alt+Supr` (`Caps Shift+Symbol Shift+F` and then `N` on ZXUnGo+) or `F12` (`Caps Shift+Symbol Shift+W` on ZXUnGo+):: Soft reset.
 
-
 The default mode on startup is 128K.
 
 [TIP]
@@ -1772,7 +1770,6 @@ You can set up the files in the SD in two different ways:
 ===== Special keys and buttons
 
 The following ZXUnGo+ keyboard combinations are obtained while in `ATOM` mode (`Caps Shift+Symbol Shift+F`, then `U` and then `J`). Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
-
 
 While the core is running:
 
@@ -2100,7 +2097,7 @@ Concatenate the disk images (with a maximum of 20) using `cat`:
 
 [source,shell]
 ----
-cat imagen.nib image2.nib (...) image20.nib > apple2_20discs.img
+cat image.nib image2.nib (...) image20.nib > apple2_20discs.img
 ----
 
 Dump the new file to the SD card, using `dd`:
@@ -2701,7 +2698,6 @@ If it wasn't already, <<#_cores,install Commodore 16 core>> into ZX-Uno.
 ==== Keyboard
 
 ===== Special keys and buttons
-
 
 The following ZXUnGo+ keyboard combinations are obtained while in `C16` mode (`Caps Shift+Symbol Shift+F`, then `U` and then `E`). Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
 
@@ -3333,9 +3329,9 @@ Some features of this core are:
 - Only VGA video mode is supported, with non-accurate timings, so it may not work with some displays
 - HQ2X filters that "removes pixels" from the image
 - Scanlines simulation
-- Made with NES NTSC clock timings, so only USA ROMs run fine. PAL ROMs run faster than they sould
+- Made with NES NTSC clock timings, so only USA ROMs run fine. PAL ROMs run faster than they should
 - You can load ROMs from the SD
-- The basic core uses all 512 KB ZX-Uno SRAM. It's split into two 256 KB banks, uno for PRG_ROM and the other for CHR_ROM. So any ROM using more than 256 KB for CHR or PRG won't work. Obviously any ROM bigger than 512 KB won´t work too.
+- The basic core uses all 512 KB ZX-Uno SRAM. It's split into two 256 KB banks, uno for PRG_ROM and the other for CHR_ROM. So any ROM using more than 256 KB for CHR or PRG won't work. Obviously any ROM bigger than 512 KB won't work too.
 - There are another core versions adapted to use 2MB of SRAM and which can load games using up to 1MB of CHR RAM and 1MB of PRG RAM (2MB in total)
 - Joystick support
 
@@ -3506,7 +3502,7 @@ A different core version of https://es.wikipedia.org/wiki/Oric_Atmos[Oric Atmos]
 This version has the following features:
 
 - Composite or VGA (Scandoubler) video out
-- 64KB RAM and 16KB ROM. The ROM hides the upper memory, but all the memory banks are accesible using machine code
+- 64KB RAM and 16KB ROM. The ROM hides the upper memory, but all the memory banks are accessible using machine code
 - Selectionable ROM between the original version (1.1), and versión 1.22, alternate ROM which fixes errors
 - The joystick directional controls are mapped to cursor keys (`Caps Shift+5`, `Caps Shift+6`, `Caps Shift+7` and `Caps Shift+8` on ZXUnGo+), and both fire buttons to the keys `Space` and `S`.
 - Program loading through the audio input
@@ -3622,7 +3618,7 @@ Some files and directories used by MSXDOS have the same names, so it's not recom
 
 You can use https://mh-nexus.de/en/hxd/[HxD (Hex Editor for Windows)]:
 
-. Run the program with administrator privileges ans select the option `Open disk...` from the `Tools` menu
+. Run the program with administrator privileges and select the option `Open disk...` from the `Tools` menu
 . Uncheck the option to only read and select the SD card
 . Open in a different window the file with the BIOS image
 . Copy the contents of the BIOS image file and paste, replacing, at the end of the card
@@ -3670,7 +3666,7 @@ fdisk: 1>q
 ----
 
 [start=2]
-. As the sectors are 512 bytes in size, substract 16 (for this example, `30535680-16=30535664`) and use that number to inject the data at the end:
+. As the sectors are 512 bytes in size, subtract 16 (for this example, `30535680-16=30535664`) and use that number to inject the data at the end:
 
 [source,shell]
 ----
@@ -3679,7 +3675,6 @@ sudo dd if=Next186_BIOS_zxdos_ddr3.COM of=/dev/rdisk6 bs=512 seek=30535664
 ----
 
 See the <<#_cores,corresponding section>> for instructions of how to install the PC XT core in Zx-Uno.
-
 
 ==== Keyboard
 
@@ -3704,6 +3699,73 @@ image:img/pcxt.png[pdfwidth=70%]
 . Reboot the ZX-Uno without losing the temporary keyboard mode (`Caps Shift+Symbol Shift+F` and then `B`)
 . Quickly, press `Caps Shift+2` or `Caps Shift+6` and select the PC XT core to boot
 . Ensure that the DOS keyboard configuration is in an spanish mode (`KEYB ES.`)
+
+[CAUTION]
+====
+On a ZXUnGo+, it's not recommended to use the `PC XT` keyboard mode with a PS/2 keyboard connected. This causes some conflicts and both keyboards won't function properly.
+====
+
+<<<
+
+=== PC XT CGA
+
+The https://es.wikipedia.org/wiki/IBM_Personal_Computer_XT[IBM Personal Computer XT] also known as PC/XT was the second PC IBM model. The https://es.wikipedia.org/wiki/Color_Graphics_Adapter[IBM Color/Graphics Adapter] was the first graphic adapter card made by IBM for PC.
+
+This core, https://github.com/spark2k06/next186lite_graphics_gremlin[made by spark2k06], and based on the <<#_pc_xt,original port of Next186 by DistWave>>, tries to be a more faithful recreation of the original PC XT, and has these features:
+
+- Faithful implementation of https://es.wikipedia.org/wiki/Motorola_6845[Motorola 6845 chip], having all its registers and graphic modes
+- Same behaviour with PUS SP like a 8086/80186 the CPU is correctly detected
+- All partial video modes in Next186 are removed (MCGA/EGA/VGA)
+- Full CGA implementation based on  https://github.com/schlae/graphics-gremlin[Graphics Gremlin project] by TubeTime
+- Partial Tandy Graphics (TGA) implementation
+- Simplified clocks, setting the overall speed of the machine to 12Mhz (default) or 4.77Mhz (Throttle Down)
+- Revised BIOS video functions, using part of https://github.com/skiselev/8088_bios[Micro8088 project by Sergey Kiselev]
+- RGB666 video DAC support
+- 2MB SRAM version has, for the moment, 1MB (EMS) available for the core
+
+==== SD card format
+
+You have to use a SDHC card, with the first partition in FAT16 format and with MS-DOS (or similar) installed. You can achieve this using, for example, virtualization software and connecting directly de SD card device as a hard disk. You can also find several pre-made images at https://www.zxuno.com/forum/viewforum.php?f=56[ZX-Uno forum page] and https://www.forofpga.es/viewtopic.php?f=37&t=120[ZXDOS+ forums].
+
+[CAUTION]
+====
+**Do not use any FAT reordering utility** since, this may stop DOS from booting.
+====
+
+[WARNING]
+====
+Some files and directories used by MSXDOS have the same names, so it's not recommended to use the same SD card for <<#_msx,MSX>> and PC XT cores.
+====
+
+See the <<#_cores,corresponding section>> for instructions of how to install the PC XT core in Zx-Uno.
+
+<<<
+
+==== Keyboard
+
+===== Special keys and buttons
+
+The following ZXUnGo+ keyboard combinations are obtained while in `PCXT` mode (`Caps Shift+Symbol Shift+F`, then `U` and then `0`). Please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information.
+
+While the core is running:
+
+- `Ctrl+Alt+Scroll Lock` (`Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` and then `Caps Shift+Symbol Shift+Y` on ZXUnGo+): Change between Green, amber, and black and white modes
+- `Ctrl+Alt+KeyPad -` (`Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` and then `Caps Shift+Symbol Shift+R` on ZXUnGo+): Throttle down speed
+- `Ctrl+Alt+KeyPad +` (``Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` and then `Caps Shift+Symbol Shift+D` on ZXUnGo+): Set speed to normal (12MHz)
+- `Ctrl+Alt+Del`(`Caps Shift+Symbol Shift+F` and then `N` on ZXUnGo+): Soft Reset
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` and then `B` on ZXUnGo+): Hard reset. Backspace is the delete key, located in the top-right portion of the keyboard, above `Enter`
+
+<<<
+
+==== Basic Guide
+
+[.text-center]
+image:img/pcxt.png[pdfwidth=70%]
+
+. Start the ZX-Uno
+. For a ZXUnGo+, change the keyboard mode to `PC XT` keyboard mode (`Caps Shift+Symbol Shift+U`, `F`, and then `0`)
+. Reboot the ZX-Uno without losing the temporary keyboard mode (`Caps Shift+Symbol Shift+F` and then `B`)
+. Quickly, press `Caps Shift+2` or `Caps Shift+6` and select the PC XT core to boot
 
 [CAUTION]
 ====
@@ -3821,9 +3883,9 @@ The https://en.wikipedia.org/wiki/Master_System[Sega Master System] was a video 
 
 The ZX-Uno core is based on http://forum.gadgetfactory.net/index.php?/topic/1304-sega-master-system-on-the-papilio-plus/[Ben's original work for Papilio Plus].
 
-Some of the core featurers are:
+Some of the core features are:
 
-- VGA and Compostite or RGB video output with PAL sync (50Hz)
+- VGA and Composite or RGB video output with PAL sync (50Hz)
 - Joysticks support
 - Joystick emulation via keyboard
 - Loading cartridge image files from the SD card
@@ -3861,7 +3923,7 @@ image:img/sms.png[pdfwidth=70%]
 
 === SmartROM
 
-https://github.com/Utodev/smartROM[SmartROM] is a kind of firmware that allows to loadi different ROMS for implementations of the ZX-Uno core in FPGA boards without flash memory, or where the flash memory cannot be used by the ZX-Uno core.
+https://github.com/Utodev/smartROM[SmartROM] is a kind of firmware that allows to load different ROMS for implementations of the ZX-Uno core in FPGA boards without flash memory, or where the flash memory cannot be used by the ZX-Uno core.
 
 ==== SD card format
 
@@ -3869,7 +3931,7 @@ The card has to be formatted <<_#sd_card_formatting,the same as when preparing f
 
 Also, you have to install <<#_esxdos,esxdos 0.8.8>> to the card, and create a directory named `ZXUNO` with, at least, https://github.com/Utodev/smartROM/blob/master/binaries/SMARTROM.ZX1[the `SMARTROM.ZX1` file] and a RomPack file named `ROMS.ZX1` inside.
 
-Finally, if your PS/2 keyboard is not in Spanish, you can copy the coresponding <<#_keyboard,keyboard map file>>, renamed as `KEYMAP.ZX1`.
+Finally, if your PS/2 keyboard is not in Spanish, you can copy the corresponding <<#_keyboard,keyboard map file>>, renamed as `KEYMAP.ZX1`.
 
 See the <<#_cores,corresponding section>> for instructions of how to install the SmartROM core in ZX-Uno.
 
@@ -3885,7 +3947,7 @@ Some of its features are:
 
 - VGA video out
 - OSD Menu
-- Joystick and keyboard controles
+- Joystick and keyboard controls
 - Maximum supported ROM size: 8K
 
 ==== SD card format
@@ -4069,7 +4131,7 @@ You can use a SD card with the first partition in FAT16 or FAT32 format to store
 
 You can copy a file named `ZX8X.ROM` (available at the https://github.com/avlixa/ZX81_MiSTer_zxdos/raw/master/roms/zx8x.rom[official repository] into folder `/zx81/roms`: it is a concatenation of ZX81 rom (8k) + ZX80 rom (4k).
 
-See the <<#_cores,corresponding section>> for instructions of how to install the ZX81 and ZX80 core in ZXUNO+.
+See the <<#_cores,corresponding section>> for instructions of how to install the ZX81 and ZX80 core in ZX-Uno.
 
 <<<
 
@@ -4168,7 +4230,7 @@ An interface to which one or two gamepads from various old platforms can be conn
 [.text-center]
 image:img/joy2ps2.jpg[pdfwidth=60%]
 
-The offical website http://spark2k06.strangled.net/joy2ps2/ and the firmware code repository is https://github.com/spark2k06/zxuno/tree/master/joy2ps2
+The official website http://spark2k06.strangled.net/joy2ps2/ and the firmware code repository is https://github.com/spark2k06/zxuno/tree/master/joy2ps2
 
 On startup, the main gamepad is always mapped to cursor keys, the first button to `Enter` and the second one to `Escape`.
 
@@ -4193,14 +4255,14 @@ You can download the latest firmware version from https://github.com/spark2k06/z
 
 Some cores can load, as the original machines could, from a external audio device like a cassette player or something else simulating it.
 
-Besides the card, you have to plug an appropriate audio cable to <<#_ports_and_connectors,ZX-Uno audio input>>. It must have a 3.5 mm stero jack on one side, and two mono outputs on the other side (one for each audio channel). The right audio mono is connected to the audio player.
+Besides the card, you have to plug an appropriate audio cable to <<#_ports_and_connectors,ZX-Uno audio input>>. It must have a 3.5 mm stereo jack on one side, and two mono outputs on the other side (one for each audio channel). The right audio mono is connected to the audio player.
 
 ==== Cassette Player
 
 The use is exactly the same as when using the original computers:
 
 . Plug the audio cable
-. Type on the computer or select the tape loading option. For examle, for ZX Spectrum 48K, typing `J`, then, twice, `"` and then `Enter` to do the classic `LOAD "" + Enter`
+. Type on the computer or select the tape loading option. For example, for ZX Spectrum 48K, typing `J`, then, twice, `"` and then `Enter` to do the classic `LOAD "" + Enter`
 . Start playing the tape (you may have to try several times adjusting the player volume)
 
 ==== Computer
@@ -4214,7 +4276,7 @@ This program for Windows, MacOS or Linux, can play directly a `TZX` tape file th
 You can download the binary file (for example), for Windows from https://worldofspectrum.net/utilities/#tzxtools[World of Spectrum Classic] and for Mac from https://github.com/kounch/playtzx/releases[this GitHub repository]) or compile the source code as <<#_compile_source_code_macos_or_linux,explained later>>.
 
 . Plug the audio cable between the computer audio output and ZX-Uno audio input (remember to use only the right mono channel to the PC, Mac, etc. output)
-. Type on the computer or select the tape loading option. For examle, for ZX Spectrum 48K, typing `J`, then, twice, `"` and then `Enter` to do the classic `LOAD "" + Enter`
+. Type on the computer or select the tape loading option. For example, for ZX Spectrum 48K, typing `J`, then, twice, `"` and then `Enter` to do the classic `LOAD "" + Enter`
 . Start playing a tape file with this command (you may have to try several times adjusting the player volume)
 
 [source,shell]
@@ -4254,7 +4316,7 @@ https://play.google.com/store/apps/details?id=com.baltazarstudios.playzxtapes[Pl
 
 [WARNING]
 ====
-The latest devices with headphone output are normally designed to work with impedances of only a few ohmis. This may, sometimes, not be enouth for the ZX-Uno audio input.
+The latest devices with headphone output are normally designed to work with impedances of only a few ohms. This may, sometimes, not be enough for the ZX-Uno audio input.
 
 In these cases, it's recommended (if possible) to disable headphone volume limitations and/or use a headphone amplifier that can give a higher impedance.
 ====
@@ -4317,7 +4379,7 @@ With other operating systems it normally is like:
 python3 ./zx123_tool.py
 ----
 
-You also need a SPI flash image file. This can be obtained from within the Spectrum core in "root" mode, with one of the commands `back16m`, `backzx2` or `backzxd`. Once you have obtained the exteacted file from the SD, you can "clean" it leaving only the Spectrum core and the first Spectrum ROM with a command like this:
+You also need a SPI flash image file. This can be obtained from within the Spectrum core in "root" mode, with one of the commands `back16m`, `backzx2` or `backzxd`. Once you have obtained the extracted file from the SD, you can "clean" it leaving only the Spectrum core and the first Spectrum ROM with a command like this:
 
 [source,shell]
 ----
@@ -4446,7 +4508,7 @@ Just like the BIOS firmware, you can install a ROM esxdos file, with a command l
 
 *Mix several actions in one line*
 
-Please do note that you can add several actions in one command line. For example, to "clean" an image file named `FLASH.ZX1`, creating a new one named `FLASHnew.ZX1`, installing the BIOS from the file `FIRMWARE.ZX1`, set up video mode to VGA, the keyboard in Spectrum mode, add a Spectrum ROM file `48.rom`, with the name `Spec48` while ussing slot number 5, install a core at space 3, from a file named `TBBLUE.ZX1`, with the name `TBBlue`, as default core:
+Please do note that you can add several actions in one command line. For example, to "clean" an image file named `FLASH.ZX1`, creating a new one named `FLASHnew.ZX1`, installing the BIOS from the file `FIRMWARE.ZX1`, set up video mode to VGA, the keyboard in Spectrum mode, add a Spectrum ROM file `48.rom`, with the name `Spec48` while using slot number 5, install a core at space 3, from a file named `TBBLUE.ZX1`, with the name `TBBlue`, as default core:
 
 [source,shell]
 ----
@@ -4495,7 +4557,7 @@ ZXUnCore has the right pinout to use directly a USB-Blaster 2x5 connector.
 
 *Instruction Steps*:
 
-. Install Raspberry Pi OS (formely known as Raspbian) to the Raspberry Pi SD card (using https://www.raspberrypi.org/downloads/raspberry-pi-os/[the official download], https://www.raspberrypi.org/downloads/noobs/[NOOBS], https://github.com/procount/pinn[PINN], etc.)
+. Install Raspberry Pi OS (formerly known as Raspbian) to the Raspberry Pi SD card (using https://www.raspberrypi.org/downloads/raspberry-pi-os/[the official download], https://www.raspberrypi.org/downloads/noobs/[NOOBS], https://github.com/procount/pinn[PINN], etc.)
 . Install Open OCD:
 
 [source,shell]
@@ -4549,13 +4611,13 @@ In this example, the `31`, `33`, `35`, `37` and `39` pins will be used (correspo
 |===
 
 [start=4]
-. Copy to the Raspberry Pi the file named `recovery.bit` previously downloaded from the https://www.zxuno.com/forum/viewtopic.php?f=37&t=774[ZX-Uno forum]. For our example, it will be at `/home/pi/zxunoplus/unbrick/`
+. Copy to the Raspberry Pi the file named `recovery.bit` previously downloaded from the https://www.zxuno.com/forum/viewtopic.php?f=37&t=774[ZX-Uno forum]. For our example, it will be at `/home/pi/zxuncore/unbrick/`
 
 . If using GPIO, make a copy of Open OCD configuration file, to the same directory where `recovery.bit` is.
 
 [source,shell]
 ----
-cp /usr/local/share/openocd/scripts/interface/raspberrypi2-native.cfg /home/pi/zxunoplus/unbrick/
+cp /usr/local/share/openocd/scripts/interface/raspberrypi2-native.cfg /home/pi/zxuncore/unbrick/
 ----
 
 <<<
@@ -4570,7 +4632,7 @@ bcm2835gpio_jtag_nums 26 6 13 19
 ----
 
 [start=7]
-. Comment, if it wasnt't already, the line `bcm2835gpio_swd_nums` (not necessary for USB-Blaster connection):
+. Comment, if it wasn't already, the line `bcm2835gpio_swd_nums` (not necessary for USB-Blaster connection):
 
 [source]
 ----
@@ -4594,8 +4656,8 @@ For GPIO connection:
 
 [source,shell]
 ----
-cd /home/pi/zxunoplus/unbrick
-sudo openocd -f /home/pi/zxunoplus/unbrick/raspberrypi2-native.cfg -f /usr/local/share/openocd/scripts/cpld/xilinx-xc6s.cfg -c "init; xc6s_program xc6s.tap; pld load 0 recovery.bit ; exit"
+cd /home/pi/zxuncore/unbrick
+sudo openocd -f /home/pi/zxuncore/unbrick/raspberrypi2-native.cfg -f /usr/local/share/openocd/scripts/cpld/xilinx-xc6s.cfg -c "init; xc6s_program xc6s.tap; pld load 0 recovery.bit ; exit"
 ----
 
 For USB-Blaster connection:
@@ -4766,7 +4828,7 @@ This process can't be undone, and it will replace all the previously installed c
 
 [NOTE]
 ====
-Ususally, the recovery image is set to use a PS/2 keyboard so, for a ZXUnGo+, some key combinations, like `Caps Shift + 5`, etc may not work. In this case, you have to change the keyboard to any mode except the normal `ZX` (please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information), to make them work temporarily.
+Usually, the recovery image is set to use a PS/2 keyboard so, for a ZXUnGo+, some key combinations, like `Caps Shift + 5`, etc may not work. In this case, you have to change the keyboard to any mode except the normal `ZX` (please read <<#_membrane_keyboard,the section dedicated to ZXUnGo+ keyboard modes>> for more information), to make them work temporarily.
 ====
 
 [start=13]
@@ -4796,7 +4858,7 @@ For a ZXUnGo+, since the recovery image uses a PS/2 configuration as default, fo
 
 [NOTE]
 ====
-When using Linux with `urjtag`, the process should be quite similar, although the dependencies (libftdi libusb pkg-config) would have to be installed with the appropiate package manager (apt, yum, pacman, etc.)
+When using Linux with `urjtag`, the process should be quite similar, although the dependencies (libftdi libusb pkg-config) would have to be installed with the appropriate package manager (apt, yum, pacman, etc.)
 ====
 
 <<<

@@ -36,7 +36,7 @@ Por defecto, está configurado en modo ZX Spectrum. Para cambiar a otro modo, se
 |`D`
 |Commodore 16 / Plus 4
 |`E`
-|HT-1080Z / Video Genie / TRS-80 Model I G – Galaksija
+|HT-1080Z / Video Genie / TRS-80 Model I
 |`F`
 |Galaksija
 |`G`
@@ -238,7 +238,6 @@ En todos los modos de teclado se ha intentado que coincidan la mayoría de los s
 
 Para poder instalar el firmware, se  necesita un ordenador (Windows, Mac, Linux).
 
-
 *Material necesario*:
 
 - Ordenador (Windows, Mac, Linux)
@@ -251,7 +250,7 @@ image:./img/ftdi_usb.jpg[pdfwidth=30%]
 *Software necesario*:
 
 - https://github.com/binaryupdates/xLoader[XLoader] (sólo para Windows) o https://www.nongnu.org/avrdude/[AVRDUDE] (es posible utilizar la versión incluida con el entorno https://www.arduino.cc/en/software[Arduino IDE]).
-- Fichero `.hex` binario con la versión a instalar, que se puede obtener en https://github.com/spark2k06/zxunops2/tree/master/Alternative/binaries[el repositorio oficial] (normalmente, el fichero deseado es uno de los teminados en `-328.hex`).
+- Fichero `.hex` binario con la versión a instalar, que se puede obtener en https://github.com/spark2k06/zxunops2/tree/master/Alternative/binaries[el repositorio oficial] (normalmente, el fichero deseado es uno de los terminados en `-328.hex`).
 
 <<<
 

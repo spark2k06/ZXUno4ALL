@@ -1,6 +1,6 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.1.1
+:revnumber: 1.2.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -45,7 +45,7 @@ La mayor parte del contenido de este documento se basa en información compartid
 - En los varios FAQ existentes, principalmente la versión original https://uto.speccy.org/zxunofaq.html[de @uto_dev], y la versión más moderna http://desubikado.sytes.net/zx-uno-faq-version-desubikado/[de @desUBIKado]
 - En el https://t.me/zxuno[canal oficial de Telegram de ZX-Uno]
 
-Un agradecimento especial a desUBIKado por la intensa y continua labor recopilando y recabando información sobre los distintos cores y funcionalidades.
+Un agradecimiento especial a desUBIKado por la intensa y continua labor recopilando y recabando información sobre los distintos cores y funcionalidades.
 
 Sin el trabajo previo de todas estas personas (y más), ese manual no podría existir.
 
@@ -143,15 +143,15 @@ Para poder poner en marcha un ZXUnGo+ hace falta, al menos, lo siguiente:
 Para poder aprovechar todo su potencial, es útil tener también:
 
 - Una tarjeta SD, no necesariamente muy grande
-- Unos altavoces de PC para conectar a la salida de audio, o un cable jack-stereo a dos conectores RCA rojo/blanco para conectar a la TV
-- Un ratón PS/2 (se necesista adaptador PS/2 en "Y")
+- Unos altavoces de PC para conectar a la salida de audio, o un cable jack estéreo a dos conectores RCA rojo/blanco para conectar a la TV
+- Un ratón PS/2 (se necesita adaptador PS/2 en "Y")
 - Un cable con un jack estéreo de 3,5 mm en un extremo y los dos canales de sonido divididos en dos salidas mono en el otro, si se quiere usar algún dispositivo de reproducción y/o grabación de audio, un PC/Mac/Raspberry PI, etc. o un reproductor/grabador de https://es.wikipedia.org/wiki/Casete[cassette]. El canal derecho se utiliza como entrada (EAR) y el canal izquierdo se puede usar como salida de grabación (MIC).
 
 <<<
 
 ==== Formato de la tarjeta SD
 
-Para poder utilizar una tarjeta SD con el core principal de Spectrum, esta debe tener, al menos, una partición (la primera en el caso de haber varias) en formato FAT16, FAT32 u otros (según el caso, se puede necesitar, un formato específico para compatibilidad con distintos cores de terceros). Para el core de Spectrum, tambén es posible tener <<#_formato_avanzado_de_la_tarjeta_sd_3e,una primera partición en formato +3DOS y luego otra(s) en formato FAT16 o FAT32>>, para su uso con una ROM de +3e.
+Para poder utilizar una tarjeta SD con el core principal de Spectrum, esta debe tener, al menos, una partición (la primera en el caso de haber varias) en formato FAT16, FAT32 u otros (según el caso, se puede necesitar, un formato específico para compatibilidad con distintos cores de terceros). Para el core de Spectrum, también es posible tener <<#_formato_avanzado_de_la_tarjeta_sd_3e,una primera partición en formato +3DOS y luego otra(s) en formato FAT16 o FAT32>>, para su uso con una ROM de +3e.
 
 [NOTE]
 ====
@@ -165,7 +165,7 @@ A la hora de poner el nombre a una partición que se vaya a utilizar con esxdos,
 
 [TIP]
 ====
-Para el core de Spectrum, tambén es posible tener <<#_formato_avanzado_de_la_tarjeta_sd_3e,una primera partición en formato +3DOS y luego otra(s) en formato FAT16 o FAT32>>, para su uso con una ROM de +3e.
+Para el core de Spectrum, también es posible tener <<#_formato_avanzado_de_la_tarjeta_sd_3e,una primera partición en formato +3DOS y luego otra(s) en formato FAT16 o FAT32>>, para su uso con una ROM de +3e.
 ====
 
 <<<
@@ -503,7 +503,7 @@ En la primera pantalla de configuración, además de poder ejecutar distintas pr
 - Soporte NMI para DivMMC
 - Soporte para nuevos modos gráficos (ULAPlus, Timex, Radastan)
 
-Se puede consultar información más tecnica en https://www.zxuno.com/wiki/index.php/ZX_Spectrum[la Wiki de ZX-Uno].
+Se puede consultar información más técnica en https://www.zxuno.com/wiki/index.php/ZX_Spectrum[la Wiki de ZX-Uno].
 
 <<<
 
@@ -622,7 +622,7 @@ Finalmente, desde la última pantalla se puede:
 
 == ZX Spectrum
 
-El core principal es el que implementa un ordenador ZX Spectrum. Este core es especial, y no se puede sustibuir por otro que no sea de ZX Spectrum, ya que el ZX-Uno lo utiliza para su funcionamiento. La versión instalada por defecto es una variación del core EXP27-160820 de mcleod_ideafix.
+El core principal es el que implementa un ordenador ZX Spectrum. Este core es especial, y no se puede sustituir por otro que no sea de ZX Spectrum, ya que el ZX-Uno lo utiliza para su funcionamiento. La versión instalada por defecto es una variación del core EXP27-160820 de mcleod_ideafix.
 
 Estas son algunas de sus principales características:
 
@@ -686,7 +686,7 @@ Véase el <<#_roms_3,apartado de actualizaciones>> para más información sobre 
 
 https://www.facebook.com/groups/DerbyPro[DerbyPro o Derby{pp}] es una ROM mejorada para el ZX Spectrum, basada en la versión 1.4 de la ROM de desarrollo Derby. El Spectrum 128 (nombre en código "Derby") fue una máquina española, encargada por Investronica y lanzada en 1985. Incluía un teclado aparte que añadía varias teclas de edición extra. En 1986 se lanzó la versión para Reino Unido con una versión simplificada de 128 BASIC y sin teclado extra. Derby++ se basa en la ROM española para incluir lo mejor de las dos versiones, sin sus inconvenientes, y con soporte para nuevo hardware.
 
-Se puede descargar la ROM, un manual de usuario y otos ficheros del https://www.facebook.com/groups/DerbyPro[grupo púbilco oficial de Facebook].
+Se puede descargar la ROM, un manual de usuario y otros ficheros del https://www.facebook.com/groups/DerbyPro[grupo púbilco oficial de Facebook].
 
 Esta ROM de 64K tiene soporte para nuevo hardware, incluyendo el uso de comandos de esxdos desde 128 BASIC, así que se pueden usar estas opciones al <<#_zx123_tool,añadirla a la SPI flash>>:
 
@@ -737,7 +737,7 @@ Dependiendo de la ROM elegida, los ajustes a indicar cuando se <<#_zx123_tool,a�
 
 En el caso de usar una ROM con la opción de introducir POKEs, se hace de la siguiente manera:
 
-. Una vez el juego ha cargado, pulsando NMI (`F5`), aparecerá un campo en la parte superior izquierda de la pantlla
+. Una vez el juego ha cargado, pulsando NMI (`F5`), aparecerá un campo en la parte superior izquierda de la pantalla
 . Escribir la dirección del POKE a introducir y pulsar `Enter`
 . Escribir el valor del POKE y pulsar `Enter`
 . Repetir los pasos 2. y 3. todas las veces que se desee. Para terminar y volver al juego, pulsar `Enter` dos veces seguidas
@@ -958,7 +958,7 @@ diskutil list
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *15.9 GB    disk6
    1:                       0x7F                         1.0 GB     disk6s1
-   2:                 DOS_FAT_16 ZXUNOPLUS               4.0 GB     disk6s2
+   2:                 DOS_FAT_16 ZXUNCORE                4.0 GB     disk6s2
    3:                 DOS_FAT_32 EXTRA                   10.9 GB    disk6s3
 ----
 
@@ -1558,7 +1558,6 @@ Este proceso sustituye todos los cores instalados, la BIOS, así como las ROMs d
 
 Este core se basa en el core por defecto, pero añadiendo un chip de audio SAA1099 y sin soporte para PZX.
 
-
 === ZX Spectrum 48K (Kyp)
 
 https://github.com/Kyp069/zx48.zxuno/releases[Core alternativo], cuyo objetivo es ser una implementación de un Spectrum 48K que sea lo más exacta posible en cuanto a la configuración de los tiempos (timing), contención de memoria, etc.
@@ -1933,7 +1932,7 @@ Características del core:
 La versión incluida con ZXUnCore tiene las siguientes mejoras:
 
 - Soporte para el DAC de Vídeo RGB666
-- Visualización de la imagen en Color, monocromo verde, monocromo ámbar o en blanco y negro Pulsando la tecla `Fin` ()
+- Visualización de la imagen en Color, monocromo verde, monocromo ámbar o en blanco y negro Pulsando la tecla `Fin`
 
 [NOTE]
 ====
@@ -2461,7 +2460,6 @@ Este core no utiliza la tarjeta SD.
 
 Las combinaciones específicas de ZXUnGo+ que se indican a continuación se corresponden con el modo de teclado `LYNX` (`Caps Shift+Symbol Shift+F`, luego `U` y luego `M`). Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.
 
-
 Durante la ejecución del core:
 
 - `F6` (`Caps Shift+Symbol Shift+6` en ZXUnGo+): Alterna entre el modo 48kB y el modo 96kB (por defecto)
@@ -2927,7 +2925,6 @@ Las combinaciones específicas de ZXUnGo+ que se indican a continuación se corr
 
 Durante la ejecución del core:
 
-
 - `F1` (`Caps Shift+Symbol Shift+1` en ZXUnGo+): Cancelar carga desde cinta
 - `Alt` (`Caps Shift+Symbol Shift+C` en ZXUnGo+): Permite escribir en modo gráfico
 
@@ -2991,7 +2988,6 @@ Durante la ejecución del core:
 image:img/vic20.png[pdfwidth=70%]
 
 Se puede cargar desde una cinta (u otro dispositivo externo de audio) con el comando `LOAD`. Una vez finalizadada la carga, normalmente, se ha de escribir `RUN` y pulsar `Enter`.
-
 
 [TIP]
 ====
@@ -3115,7 +3111,6 @@ Durante la ejecución del core:
 - `Mayús+0` (`Caps Shift+Symbol Shift+A` y luego `0` en ZXUnGo+): Si se ha cargado el fichero `ULCBAS.CAS` (Upper/Lower Case Driver) permite cambiar el estado de solo mayúsculas o mayúsculas+minúsculas.
 - `Ctrl+Alt+Supr`(`Caps Shift+Symbol Shift+F` y luego `N` en ZXUnGo+): Reset
 - `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+): Hard Reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
-
 
 <<<
 
@@ -3289,7 +3284,7 @@ Durante la ejecución del core:
 
 - `F1` (`Caps Shift+Symbol Shift+1` en ZXUnGo+) a `F5` (`Caps Shift+Symbol Shift+5` en ZXUnGo+): `F1` a `F5`
 - `Impr Pant` (`Caps Shift+Symbol Shift+T` en ZXUnGo+): Cambia el modo entre VGA y RGB
-- `Bloq Desp` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+): Cambia el modo de línea de exploración (Scanlines)
+- `Bloq. Desp` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+): Cambia el modo de línea de exploración (Scanlines)
 - `Pausa` (`Caps Shift+Symbol Shift+U` en ZXUnGo+): Cambia entre 50Hz y 60Hz
 - `F11` (`Caps Shift+Symbol Shift+Q` en ZXUnGo+): Activa o desactiva el modo turbo
 - `Ctrl+Alt+Supr`(`Caps Shift+Symbol Shift+F` y luego `N` en ZXUnGo+): Soft Reset
@@ -3409,9 +3404,9 @@ Durante la ejecución del core:
 
 ===== Personalización de los controles
 
-Los controles por defecto del core con soporte de teclado se pueden modificar. Para ello, se ha de crear en la raiz de la tarjeta SD un fichero llamado KEYSP1` para el primer jugador y `KEYSP2` para el segundo (se puede descargar uno de ejemplo desde https://www.zxuno.com/forum/download/file.php?id=1360[el foro de ZX-Uno]).
+Los controles por defecto del core con soporte de teclado se pueden modificar. Para ello, se ha de crear en la raíz de la tarjeta SD un fichero llamado KEYSP1` para el primer jugador y `KEYSP2` para el segundo (se puede descargar uno de ejemplo desde https://www.zxuno.com/forum/download/file.php?id=1360[el foro de ZX-Uno]).
 
-Estos ficheros se pueden crear con un editor hexadecimal (como https://mh-nexus.de/en/hxd/[HxD para Windows])y están formados por una secuencia de bytes indicando en este orden: `Arriba`, `Abajo`, `Izquierda`, `Derecha`, `Botón A`, `Botón B`. Los códigos a utilizar en la secuencia se pueden consultar en la tabla <<#_scan_codes,Scan Codes>> al final del manual (Columna MAKE), pero, teniendo en cuenta que, si el código está emparejado con `0xE0`, se ha de usar el otro valor, sumánole `0x80` (por ejemplo, para `E0 14`, sería `0x94`).
+Estos ficheros se pueden crear con un editor hexadecimal (como https://mh-nexus.de/en/hxd/[HxD para Windows])y están formados por una secuencia de bytes indicando en este orden: `Arriba`, `Abajo`, `Izquierda`, `Derecha`, `Botón A`, `Botón B`. Los códigos a utilizar en la secuencia se pueden consultar en la tabla <<#_scan_codes,Scan Codes>> al final del manual (Columna MAKE), pero, teniendo en cuenta que, si el código está emparejado con `0xE0`, se ha de usar el otro valor, sumándole `0x80` (por ejemplo, para `E0 14`, sería `0x94`).
 
 [TIP]
 ====
@@ -3752,6 +3747,72 @@ No se recomienda usar el modo de teclado `PC XT` en ZXUnGo+, a la vez que un tec
 
 <<<
 
+=== PC XT CGA
+
+El https://es.wikipedia.org/wiki/IBM_Personal_Computer_XT[IBM Personal Computer XT] o PC/XT fue el segundo modelo de la línea PC de IBM. Por otra parte la https://es.wikipedia.org/wiki/Color_Graphics_Adapter[IBM Color/Graphics Adapter] fue la primera tarjeta gráfica de IBM para PC.
+
+Este core, https://github.com/spark2k06/next186lite_graphics_gremlin[creado por spark2k06], y basado en el <<#_pc_xt,port original de DistWave de Next186>>, intenta ser una recreación más fiel del PC XT original, y tiene las siguientes características:
+
+- Implementación bastante fiel del https://es.wikipedia.org/wiki/Motorola_6845[chip Motorola 6845], con lo cual se dispone de todos sus registros y modos gráficos
+- Mismo comportamiento que un 8086/80186 con PUSH SP, correcta identificación del modelo de CPU por parte de los programas
+- Se eliminan los modos de vídeo que estaban parcialmente implementados en el proyecto Next186 (MCGA/EGA/VGA)
+- Implementación completa de CGA basada en el https://github.com/schlae/graphics-gremlin[proyecto Graphics Gremlin] de TubeTime
+- Implementación parcial de Tandy Graphics (TGA)
+- Relojes simplificados, estableciendo la velocidad general de la máquina en 12Mhz (por defecto) y 4.77Mhz (velocidad reducida)
+- Funciones de BIOS correspondientes al acceso a vídeo revisadas, utilizando parte del https://github.com/skiselev/8088_bios[proyecto Micro8088 de Sergey Kiselev]
+- Soporte para DAC de Vídeo RGB666
+- Soporte Adlib gracias al módulo de OPL2 desarrollado por @jotego (jtopl2[https://github.com/jotego/jtopl])
+- La versión de 2MB de SRAM tiene, por el momento, direccionamiento de 1MB (EMS)
+
+==== Formato de Tarjeta SD
+
+Se debe de utilizar una tarjeta SDHC (por tanto de al menos 4GB), con la primera partición FAT16 y con MS-DOS (o similar) instalado. Esto se puede conseguir usando, por ejemplo, software de virtualización y conectando directamente el dispositivo de la tarjeta SD como disco. En los foros de https://www.zxuno.com/forum/viewforum.php?f=56[ZX-Uno] y https://www.forofpga.es/viewtopic.php?f=37&t=120[ZXDOS+] se puede obtener más información y encontrar algunas imágenes de tarjeta SD.
+
+[CAUTION]
+====
+**No se debe utilizar ninguna utilidad de reordenación de FAT** ya que esto puede provocar que deje de arrancar correctamente DOS.
+====
+
+[WARNING]
+====
+Como algunos de los directorios y ficheros de sistema de MSXDOS pueden tienen el mismo nombre, no se recomienda utilizar la misma tarjeta para el <<#_msx,core de MSX>> y el de PC XT.
+====
+
+Si no estuviera ya, <<#_cores,instalar el core de PC XT CGA>> en el ZX-Uno.
+
+<<<
+
+==== Teclado
+
+===== Teclas especiales y botones
+
+Las combinaciones específicas de ZXUnGo+ se corresponden con el modo de teclado `PCXT` (`Caps Shift+Symbol Shift+F`, luego `U` y luego `0`). Véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> de ZXUnGo+ para más información.
+
+- `Ctrl+Alt+Bloq. Desp` (`Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` y luego `Caps Shift+Symbol Shift+Y` en ZXUnGo+): Cambio a Verde - Ambar - B&W (Simulación de monitor monocromático)
+- `Ctrl+Alt+KeyPad -` (`Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` y luego `Caps Shift+Symbol Shift+R` en ZXUnGo+): Reducir velocidad
+- `Ctrl+Alt+KeyPad +` (``Caps Shift+Symbol Shift+Z`, `Caps Shift+Symbol Shift+C` y luego `Caps Shift+Symbol Shift+D` en ZXUnGo+): Velocidad normal a 12MHz
+- `Ctrl+Alt+Supr`(`Caps Shift+Symbol Shift+F` y luego `N` en ZXUnGo+): Soft Reset
+- `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+): Hard Reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
+
+<<<
+
+==== Guía Básica
+
+[.text-center]
+image:img/pcxt.png[pdfwidth=70%]
+
+. Iniciar el ZX-Uno
+. En el caso de ZXUnGo+, cambiar el modo de teclado a `PC XT` (`Caps Shift+Symbol Shift+F`, luego `U` y luego `0`)
+. Reiniciar el ZXUnGo+ sin que se pierda la configuración del teclado pulsando `Caps Shift+Symbol Shift+F` y luego `B`
+. Rápidamente, pulsar `Caps Shift+2` o `Caps Shift+6` y elegir el core de PC XT en el arranque
+
+[CAUTION]
+====
+No se recomienda usar el modo de teclado `PC XT` en ZXUnGo+, a la vez que un teclado de PS/2 conectado, ya que se generan conflictos y no funciona correctamente.
+====
+
+<<<
+
 === Pong
 
 Pong https://es.wikipedia.org/wiki/Pong[fue un videojuego] de la primera generación de videoconsolas publicado por Atari.
@@ -3849,7 +3910,6 @@ Durante la ejecución del core:
 - `Ctrl+Alt+Supr`(`Caps Shift+Symbol Shift+F` y luego `N` en ZXUnGo+): Soft Reset
 - `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+): Hard Reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
 
-
 <<<
 
 ==== Guía básica
@@ -3897,7 +3957,7 @@ Durante la ejecución del core:
 - `Z`, `Windows` o el botón de joystick 1: Botón de disparo 1 del jugador 1
 - `X`, `Espacio` o el botón secundario de joystick 1: Botón de disparo 2 del jugador 1
 - `Pausa` (`Caps Shift+Symbol Shift+U` en ZXUnGo+): Tecla de botón de pausa de Master System
-- `Bloq Desp` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+): para cambiar entre modo de vídeo RGB/Vídeo Compuesto y VGA
+- `Bloq. Desp` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+): para cambiar entre modo de vídeo RGB/Vídeo Compuesto y VGA
 - `Ctrl+Alt+Backspace` (`Caps Shift+Symbol Shift+F` y luego `B` en ZXUnGo+):: Hard reset. Backspace es la tecla de borrar hacia atrás, encima de `Enter`
 - `F12` (`Caps Shift+Symbol Shift+W` en ZXUnGo+): Reset y mostrar el selector de ficheros
 
@@ -4288,7 +4348,7 @@ En Linux, el programa utiliza como salida el dispositivo `/dev/dsp`, así que, e
 
 ====== Compilar código fuente (MacOS o Linux)
 
-Verificar que están instaladas las herramientas de desarrollo, incluyendo un compilador de C (`gcc`, `clang` herramientas de desarrollaor de línea de comandos en Mac, etc.) y https://es.wikipedia.org/wiki/GNU_build_system[GNU Autotools].
+Verificar que están instaladas las herramientas de desarrollo, incluyendo un compilador de C (`gcc`, `clang` herramientas de desarrollador de línea de comandos en Mac, etc.) y https://es.wikipedia.org/wiki/GNU_build_system[GNU Autotools].
 
 Descargar el código fuente https://github.com/kounch/playtzx[desde este repositorio]), descomprimirlo y acceder en una consola al directorio, y ejecutar los comandos:
 
@@ -4530,7 +4590,7 @@ En esta situación, existen diferentes métodos de recuperación que permiten vo
 
 ==== Preparación del cableado
 
-En los siguientes pasos de recuperación se habla de conectar cables puente o USB-Blaster a la placa ZXUnCore. Para ello, usar la siguiente imágen como referencia.
+En los siguientes pasos de recuperación se habla de conectar cables puente o USB-Blaster a la placa ZXUnCore. Para ello, usar la siguiente imagen como referencia.
 
 [.text-center]
 image:img/jtag.png[pdfwidth=80%]
@@ -4584,7 +4644,7 @@ rm -rf ./openocd-code
 <<<
 
 [start=3]
-. Conectar el USB-Blaster o los cables puente para GPIO <<#_preparación_del_cableado,tal y como se explica anterioremente>>. Si se va a hacer la conexión usando GPIO, conectar las líneas de JTAG de la FPGA (`TMS`, `TDI`, `TDO`, `TCK` y `GND`), con los cables, a los pines https://es.wikipedia.org/wiki/GPIO[GPIO] de la Raspberry Pi.
+. Conectar el USB-Blaster o los cables puente para GPIO <<#_preparación_del_cableado,tal y como se explica anteriormente>>. Si se va a hacer la conexión usando GPIO, conectar las líneas de JTAG de la FPGA (`TMS`, `TDI`, `TDO`, `TCK` y `GND`), con los cables, a los pines https://es.wikipedia.org/wiki/GPIO[GPIO] de la Raspberry Pi.
 
 Si se hace conexión vía GPIO, tomar nota de los pines elegidos, teniendo cuidado de conectar `GND` con `GND`.
 
@@ -4678,7 +4738,7 @@ sudo openocd -f /usr/local/share/openocd/scripts/interface/altera-usb-blaster.cf
 [start=11]
 . Si todo va bien, veremos cómo cambia el estado de los LED de la FPGA y veremos la imagen de la BIOS en el monitor.
 
-En el caso de que no se vea imagen, pulsar `Bloq. Despl.` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+ , uando cualquier modo de teclado excepto el modo `ZX` normal, véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> para más información) para cambiar entre modo de video compuesto y VGA, por si acaso la BIOS ha arrancado en un modo que no corresponde a la conexión del monitor.
+En el caso de que no se vea imagen, pulsar `Bloq. Despl.` (`Caps Shift+Symbol Shift+Y` en ZXUnGo+ , cuando cualquier modo de teclado excepto el modo `ZX` normal, véase el <<#_teclado_de_membrana,apartado dedicado a los modos de teclado>> para más información) para cambiar entre modo de video compuesto y VGA, por si acaso la BIOS ha arrancado en un modo que no corresponde a la conexión del monitor.
 
 [.text-center]
 image:img/recovery.png[pdfwidth=70%]
@@ -4763,7 +4823,7 @@ cd urjtag
 [start=2]
 . Copiar la carpeta data adicional para UrJTAG, dentro de la carpeta data de urjtag.
 
-. Lanzar el proceso de compilacion:
+. Lanzar el proceso de compilación:
 
 [source,shell]
 ----
@@ -4863,7 +4923,7 @@ En el caso de ZXUnGo+, como la configuración de la imagen de recuperación por 
 
 [NOTE]
 ====
-En Linux, usando el mismo software UrJTAG, el proceso deberia ser similar, aunque en vez de instalar las dependencias (libftdi libusb pkg-config) mediante brew, se deberia hacer mediante apt, yum o similar
+En Linux, usando el mismo software UrJTAG, el proceso debería ser similar, aunque en vez de instalar las dependencias (libftdi libusb pkg-config) mediante brew, se debería hacer mediante apt, yum o similar
 ====
 
 <<<
