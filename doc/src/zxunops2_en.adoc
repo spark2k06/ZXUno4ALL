@@ -36,7 +36,7 @@ The default is ZX Spectrum mode. To change to a different mode, you must press `
 |`D`
 |Commodore 16 / Plus 4
 |`E`
-|HT-1080Z / Video Genie / TRS-80 Model I G – Galaksija
+|HT-1080Z / Video Genie / TRS-80 Model I
 |`F`
 |Galaksija
 |`G`
@@ -139,7 +139,7 @@ In general, the keyboard layout (except on `ZX` conventional mode), showing the 
 
 [TIP]
 ====
-You don't have to stop pressing `Caps Shift+Symbol Shift` when combining modidier keys (e.g. for `Mayús.+F10` with `Caps Shift+Symbol Shift+A`, and `Caps Shift+Symbol Shift+0`).
+You don't have to stop pressing `Caps Shift+Symbol Shift` when combining modifier keys (e.g. for `Mayús.+F10` with `Caps Shift+Symbol Shift+A`, and `Caps Shift+Symbol Shift+0`).
 ====
 
 [TIP]
@@ -149,7 +149,7 @@ Pressing `Caps Shift+Symbol Shift+F`, `U`, and an invalid key , types the name o
 
 [NOTE]
 ====
-The source code, binaries and more instructions about the keyboard firmware can be found at https://github.com/spark2k06/zxunops2/tree/master/Alternative[the offical repository].
+The source code, binaries and more instructions about the keyboard firmware can be found at https://github.com/spark2k06/zxunops2/tree/master/Alternative[the official repository].
 ====
 
 [TIP]
@@ -213,7 +213,7 @@ The full function list is this one:
 |ZX, Atari, BBC, VIC, ORIC and HT-1080Z
 |===
 
-`C` function enables or disables mapping the cursor keys to `O`, `P`, `Q`, `A` and `M` is exchanged with `Space`. It works with all keyboard modes execept:
+`C` function enables or disables mapping the cursor keys to `O`, `P`, `Q`, `A` and `M` is exchanged with `Space`. It works with all keyboard modes except:
 
 - C64 and Atari 800XL modes: instead of cursor keys, the map is to `8`, `4`, `6` and `2` of the keypad, and `M` to key `0` (fire)
 - Jupiter ACE: instead of cursor keys, the map is to `8`, `4`, `6` and `2` of the keypad, and `M` and 'Space' are exchanged.
@@ -226,7 +226,6 @@ All keyboard modes try to match most of their symbols to those printed on the Sp
 
 In order to install the firmware, a computer is needed (Windows, Mac, Linux).
 
-
 *Hardware needed*:
 
 - Computer (Windows, Mac, Linux)
@@ -238,14 +237,14 @@ image:./img/ftdi_usb.jpg[pdfwidth=30%]
 
 *Software needed*:
 
-- https://github.com/binaryupdates/xLoader[XLoader] (only for Windows) or https://www.nongnu.org/avrdude/[AVRDUDE] (you can use the embeded version in https://www.arduino.cc/en/software[Arduino IDE]).
--`.hex` binary file for the firmware version to install, which you can download from https://github.com/spark2k06/zxunops2/tree/master/Alternative/binaries[the official repository] (usually, the file is one whoe name ends with `-328.hex`).
+- https://github.com/binaryupdates/xLoader[XLoader] (only for Windows) or https://www.nongnu.org/avrdude/[AVRDUDE] (you can use the embedded version in https://www.arduino.cc/en/software[Arduino IDE]).
+-`.hex` binary file for the firmware version to install, which you can download from https://github.com/spark2k06/zxunops2/tree/master/Alternative/binaries[the official repository] (usually, the file is one whose name ends with `-328.hex`).
 
 <<<
 
 *Preparation*
 
-Unplug the Arduino board (if needed), and locate all the conections.
+Unplug the Arduino board (if needed), and locate all the connections.
 
 [.text-center]
 image:./img/arduinominipro.jpg[pdfwidth=30%]
@@ -281,7 +280,7 @@ Plug the USB adapter to the computer, and find out the connected port (`COM`, `/
 
 === xLoader
 
-Choos the following parameters:
+Choose the following parameters:
 
 - Device: Duemilanove/Nano (ATMega328)
 - Baud rate: 57600
