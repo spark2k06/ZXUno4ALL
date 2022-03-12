@@ -1,6 +1,6 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.2.0
+:revnumber: 1.2.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -3396,6 +3396,61 @@ The following options are available:
 ====
 You can move faster through the menu options using `Page Up` (`Caps Shift+Symbol Shift+J` on ZXUnGo+) and `Page Down` (`Caps Shift+Symbol Shift+N` on ZXUnGo+).
 ====
+
+<<<
+
+=== Ondra SPO 186
+
+The https://cs.wikipedia.org/wiki/Ondra_(poč%C3%ADtač)[Ondra SPO 186] was a Czechoslovak 8-bit computer developed in 1985 at Tesla Liberec as a cheap school and home computer. 
+
+The https://github.com/PetrM1/OndraSPO186_ZXUno[ZX-Uno version] has been developed by PetrM1, based on the previous MiSTer version, and has these features:
+
+- 64 kB RAM
+- Keyboard support
+- Sound
+- Software loading via ZX-Uno audio in port
+- Program loading via serial port
+
+==== SD card format
+
+This core does not use the SD card.
+
+==== Keyboard
+
+[WARNING]
+====
+Due to the requirements of this core, it is not enough having a membrane keyboard connected. It is necessary to have a PS/2 keyboard connected at the same time to be able to use it.
+====
+
+Ondra has a 37-key keyboard, where the use of modifier keys allows each key to serve 2 or 3 different characters. Each modifier key must be pressed (and held) before pressing the character key to be modified.
+
+[.text-center]
+image:img/keyboardondra.png[pdfwidth=70%]
+
+===== Special keys and buttons
+
+- `Shift`: `Shift`
+- `Alt`: `Symbols`
+- `Tab`: `Numbers`
+- `Control`: `Ctrl`
+- `Shift`:  `ČS` (used for Czech diacritics)
+
+==== Basic guide
+
+[.text-center]
+image:img/ondraspo1.png[pdfwidth=70%]
+
+Once you have started the core, you can load it from a tape (or other external audio device) by pressing the `Enter` key (if you have typed anything, erase it all using `Ctrl+Left Cursor`). The display will then start to flash and the following text will be shown:
+
+[source]
+----
+.KÓD 1
+----
+
+[.text-center]
+image:img/ondraspo1.png[pdfwidth=70%]
+
+Start tape playback and the text on the screen will change during loading.
 
 <<<
 

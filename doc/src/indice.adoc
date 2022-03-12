@@ -1,6 +1,6 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.2.0
+:revnumber: 1.2.1
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -3436,6 +3436,61 @@ En él se pueden activar o desactivar las siguientes opciones:
 ====
 Se puede avanzar y retroceder más rápido por las opciones de menú usando `Re Pág` (`Caps Shift+Symbol Shift+J` en ZXUnGo+) y `Av Pág` (`Caps Shift+Symbol Shift+N` en ZXUnGo+).
 ====
+
+<<<
+
+=== Ondra SPO 186
+
+El https://cs.wikipedia.org/wiki/Ondra_(poč%C3%ADtač)[Ondra SPO 186] era un ordenador checoslovaco de 8 bits desarrollado en 1985 en Tesla Liberec como ordenador escolar y doméstico barato. 
+
+La https://github.com/PetrM1/OndraSPO186_ZXUno[versión para ZX-Uno] ha sido desarrollada por PetrM1, basada en la versión anterior para MiSTer, y tiene estas características:
+
+- 64 kB de RAM
+- Soporte para teclado
+- Sonido
+- Carga de programas a través de la entrada de audio
+- Carga de programas vía puerto serie
+
+==== Formato de Tarjeta SD
+
+Este core no utiliza la tarjeta SD.
+
+==== Teclado
+
+[WARNING]
+====
+Debido a los requisitos de este core, no es suficiente si sólo hay conectado un teclado de membrana. Es necesario tener un teclado PS/2 conectado, a la vez, para poder utilizarlo.
+====
+
+Ondra tiene teclado de 37 teclas, en el que el uso de teclas modificadoras permite que cada tecla sirva para 2 o 3 caracteres diferentes. Cada tecla modificadora debe ser presionada (y mantenida) antes de presionar la tecla de carácter a modificar.
+
+[.text-center]
+image:img/keyboardondra.png[pdfwidth=70%]
+
+===== Teclas especiales y botones
+
+- `Mayúsculas`: `Shift`
+- `Alt`: `Symbols`
+- `Tab`: `Numbers`
+- `Control`: `Ctrl`
+- `Bloq. Mayús`: `ČS` (se usa para los diacríticos checos)
+
+==== Guía básica
+
+[.text-center]
+image:img/ondraspo1.png[pdfwidth=70%]
+
+Una vez iniciado el core, se puede cargar desde una cinta (u otro dispositivo externo de audio) pulsando la tecla `Enter` (si se hubiera escrito algo, se ha de borrar todo utilizando `Ctrl+Cursor Izquierdo`). A continuación, la pantalla comenzará a parpadear y aparecerá el texto
+
+[source]
+----
+.KÓD 1
+----
+
+[.text-center]
+image:img/ondraspo2.png[pdfwidth=70%]
+
+Inicie la reproducción de la cinta y el texto en pantalla irá cambiando durante la carga.
 
 <<<
 
