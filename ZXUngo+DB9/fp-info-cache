@@ -1,0 +1,71 @@
+15404186308625
+zx-uno
+44-PIN-TSOP-2
+
+
+0
+44
+44
+zx-uno
+AUDIO-JACK
+
+
+0
+5
+5
+zx-uno
+PINHEAD-1X12
+<b>PIN HEADER</b>
+
+0
+12
+12
+zx-uno
+PinSocket_2x40_P2.00mm_Horizontal_Custom
+Through hole angled socket strip, 2x40, 2.00mm pitch, 6.35mm socket length, double cols (from Kicad 4.0.7), script generated
+Through hole angled socket strip THT 2x40 2.00mm double row
+0
+80
+80
+zx-uno
+PoweredByZXUno
+
+
+0
+0
+0
+zx-uno
+PoweredByZXUno2
+
+
+0
+0
+0
+zx-uno
+RCA
+
+
+0
+2
+2
+zx-uno
+SDCMF-10915W010
+
+
+0
+15
+15
+zx-uno
+ZX1Core_Memory_Adapter_Footprint
+TSOP-II, 44 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSOP-II SO
+0
+44
+44
+zx-uno
+ZX1Core_Socket_Memory_Adapter
+Through hole straight pin header, 1x18, 1.27mm pitch, single row
+Through hole pin header THT 1x18 1.27mm single row
+0
+36
+36

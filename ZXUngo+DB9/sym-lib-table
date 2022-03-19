@@ -1,0 +1,10 @@
+(sym_lib_table
+  (lib (name FPGA_Xilinx_Spartan6)(type Legacy)(uri Z:/Ted/projs/KiCAD_Library/Xilinx_6_Series/FPGA_Xilinx_Spartan6.lib)(options "")(descr ""))
+  (lib (name SN74LVC245APW)(type Legacy)(uri Z:/Ted/projs/KiCAD_Library/SN74LVC245APW/SN74LVC245APW.lib)(options "")(descr ""))
+  (lib (name MIC5504-1.2YM5-TR)(type Legacy)(uri Z:/Ted/projs/KiCAD_Library/MIC5504-1.2YM5-TR/MIC5504-1.2YM5-TR.lib)(options "")(descr ""))
+  (lib (name MCL86jr-rescue)(type Legacy)(uri ${KIPRJMOD}/MCL86jr-rescue.lib)(options "")(descr ""))
+  (lib (name MonochromeVGA)(type Legacy)(uri D:/Kicad/MonochromeVGA/MonochromeVGA.lib)(options "")(descr ""))
+  (lib (name isavideo-rescue)(type Legacy)(uri D:/Kicad/ZXUno4ALL/CGA_ISA/isavideo-rescue.lib)(options "")(descr ""))
+  (lib (name zxuno)(type Legacy)(uri "D:/Electronica/Kicad/ZXUno4ALL/ZXUnPicoITX/ISSUE 4 - avillena/zxuno.lib")(options "")(descr ""))
+  (lib (name ZXUnCore)(type Legacy)(uri "D:/Electronica/Kicad/ZXUno4ALL/ZXUnCore/ISSUE 3/KiCad/ZXUnCore.lib")(options "")(descr ""))
+)
