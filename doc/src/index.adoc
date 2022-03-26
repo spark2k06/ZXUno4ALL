@@ -1,6 +1,6 @@
 = ZXUno4ALL Manual
 :author: kounch
-:revnumber: 1.2.1
+:revnumber: 1.3.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -68,6 +68,27 @@ This is the module pinout (ZXUNO RGB666 / GRAPHICS GREMLIN):
 
 [.text-center]
 image:./img/pinout.png[pdfwidth=90%]
+
+<<<
+
+==== ZXUnGo+ DB9
+
+Addon for ZXUnCore and ZXUnGo+ with DB9 Joystick connector (Atari standard), compatible with https://www.zxuno.com/forum/viewtopic.php?f=25&t=3826[Antonio Villena's splitter].
+
+[.text-center]
+image:./img/ZXUnGoPlus_DB9.png[pdfwidth=90%]
+
+There are configuration jumpers similar to those available on an original ZX-Uno. Thus, it is possible to configure `PIN5` to be `+5V` and `PIN7` to be `FIRE3` (left image below), or `PIN5` to be `FIRE3` and `PIN7` to be `+5V` (right image), which adds compatibility with Antonio Villena's splitter if desired.
+
+[.text-center]
+image:./img/DB9_5V_FIRE3.jpg[pdfwidth=40%] image:./img/DB9_FIRE3_5V.jpg[pdfwidth=40%]
+
+<<<
+
+The way to use it is to connect it with ZXUnCore and, if you have a ZXUnGo+, connect it behind. Once this is done, cores with joystick support will be able to use joysticks that connect to the DB9 port of the addon.
+
+[.text-center]
+image:./img/ZXUnGoPlus_DB9_connected.jpg[pdfwidth=90%]
 
 <<<
 
@@ -140,7 +161,7 @@ In order to be able to set up and use a ZXUnGo+ you need, at least, the followin
 - VGA cable and monitor
 - A ZX Spectrum (or ZX Spectrum+) membrane keyboard, or a PS/2 keyboard
 
-In order to take advantage of its full potential, you may also have:
+In order to take advantage of its full potential, you may also use:
 
 - A SD card, not necessarily very large
 - PC speakers to connect to the audio output, or a stereo jack converter to two red/white RCA connectors to connect to the TV
@@ -540,8 +561,9 @@ image:img/bios5.png[pdfwidth=70%]
 The Advanced configuration screen is used to edit the following settings:
 
 - Keyboard layout (Keyb Layout): See <<#_keyboard,the corresponding section>> for more information)
-- Joystick behavior when emulated with the numeric keypad (Joy Keypad): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek or Fuller
-- Behavior of a joystick connected to a port (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller or simulate the keys `Q`,` A`, `O`,` P`, `Space` and `M`
+- Joystick behavior when emulated with the numeric keypad (Joy Keypad) and the second joystick (with ZXUnGo+ DB9 and a splitter): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek or Fuller
+- Behavior of a joystick connected to the main port of a ZXUnGo+ DB9 (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller or simulate the keys `Q`,` A`, `O`,` P`, `Space` and `M`
+- Enable the second physical joystick (ZXUnGo+ DB9 and splitter). Only on ZXUnGo+ DB9 with a splitter connected and for cores which have splitter support 
 - Video output: PAL, NTSC or VGA
 - Scanlines simulation: Enabled or Disabled
 - VGA horizontal frequency: 50, 51, etc.
@@ -2132,7 +2154,7 @@ While the core is running:
 
 === Arcades
 
-Originally made for https://www.zxuno.com/forum/viewtopic.php?f=21&t=478[Zx-Uno Jamma Addon] (to https://en.wikipedia.org/wiki/Japan_Amusement_Machine_and_Marketing_Association#Connector_standards[connect inside an Arcade Machine]), there are several https://en.wikipedia.org/wiki/Arcade_game[Arcade Game] cores. Afterwards, adapted versions compatible with joysticks (like ZX-Uno VGA+DB9 addon) were made.
+Originally made for https://www.zxuno.com/forum/viewtopic.php?f=21&t=478[Zx-Uno Jamma Addon] (to https://en.wikipedia.org/wiki/Japan_Amusement_Machine_and_Marketing_Association#Connector_standards[connect inside an Arcade Machine]), there are several https://en.wikipedia.org/wiki/Arcade_game[Arcade Game] cores. Afterwards, adapted versions compatible with joysticks (like ZXUnGo+ DB9 addon) were made.
 
 There are three types:
 
@@ -2955,6 +2977,35 @@ You can load from a external tape (or other external audio device) with the comm
 ====
 You can use programs like <<#_audio_file_conversion,Audiotap or Comodoro>> with Commodore `TAP` files.
 ====
+
+<<<
+
+=== Flappy Bird
+
+https://en.wikipedia.org/wiki/Flappy_Bird[Flappy Bird] was very succesful mobile game. The main goal is to control a bird, attempting to fly between columns of green pipes without hitting them.
+
+The core has been made by azesmbog using the https://github.com/themaxaboy/Flappy-Bird-Verilog[work of Max Veerapat Kumchom], adapting the original code for the AEON Lite board to ZX-Uno.
+
+Main features:
+
+- Only VGA output
+- It has to be controlled using a joystick
+
+==== SD card format
+
+This core does not use the SD card
+
+==== Keyboard
+
+This core does not use the keyboard. A joystick is needed in order to use it.
+
+===== Special keys and buttons
+
+While the core is running:
+
+- `Joystick Up`: Restart the game
+- `Joystick Down`: Master Reset
+- `Joystick Fire`: Fly
 
 <<<
 
@@ -4479,7 +4530,7 @@ This way to change the BIOS of a file named `FLASH.ZX1`, using the BIOS file `FI
 ...zx123_tool.py -i FLASH.ZX1 -a BIOS,FIRMWARE.ZX1 -m 2
 ----
 
-There are also options to set the BIOS boot delay time, the default core or the default Spectrum ROM. See the https://github.com/kounch/zx123_tool/[documentation] for more info.
+There are also options to set the BIOS boot delay time, the default core or the default Spectrum ROM. See the https://kounch.github.io/zx123_tool/en/manual.html[documentation] for more info.
 
 <<<
 
@@ -4492,7 +4543,7 @@ To add a Spectrum ROM file named `48.rom`, with the name `Spec48` and using the 
 ...zx123_tool.py -i FLASH.ZX1 -a ROM,5,xdnlh17,Spec48,48.rom
 ----
 
-See the https://github.com/kounch/zx123_tool/[documentation] for all the possible options when adding a Spectrum ROM.
+See the https://kounch.github.io/zx123_tool/en/manual.html[documentation] for all the possible options when adding a Spectrum ROM.
 
 Amongst the information you give when adding a ROM, there are some flags used to tell which hardware options, etc, you want to have enabled or disabled when loading the ROM, as shown in this table:
 

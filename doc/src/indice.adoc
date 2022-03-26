@@ -1,6 +1,6 @@
 = Manual de ZXUno4ALL
 :author: kounch
-:revnumber: 1.2.1
+:revnumber: 1.3.0
 :doctype: book
 :notitle:
 :front-cover-image: image:img/Portada.jpg[]
@@ -47,7 +47,7 @@ La mayor parte del contenido de este documento se basa en información compartid
 
 Un agradecimiento especial a desUBIKado por la intensa y continua labor recopilando y recabando información sobre los distintos cores y funcionalidades.
 
-Sin el trabajo previo de todas estas personas (y más), ese manual no podría existir.
+Sin el trabajo previo de todas estas personas (y más), este manual no podría existir.
 
 <<<
 
@@ -68,6 +68,27 @@ Este el esquema de pines del módulo (ZXUNO RGB666 / GRAPHICS GREMLIN):
 
 [.text-center]
 image:./img/pinout.png[pdfwidth=90%]
+
+<<<
+
+==== ZXUnGo+ DB9
+
+Addon para ZXUnCore y ZXUnGo+ con conector de Joystick DB9 (Norma Atari), compatible con el https://www.zxuno.com/forum/viewtopic.php?f=25&t=3826[splitter de Antonio Villena].
+
+[.text-center]
+image:./img/ZXUnGoPlus_DB9.png[pdfwidth=90%]
+
+Dispone de jumpers de configuración similares a los disponibles en un ZX-Uno original. Así, es posible configurar para que el `PIN5` sea `+5V` y el `PIN7` sea `FIRE3` (imagen de la izquierda a continuación), o bien que el `PIN5` sea `FIRE3` y el `PIN7` sea `+5V` (imagen de la derecha), lo que añade compatibilidad con el splitter de Antonio Villena si se desea.
+
+[.text-center]
+image:./img/DB9_5V_FIRE3.jpg[pdfwidth=40%] image:./img/DB9_FIRE3_5V.jpg[pdfwidth=40%]
+
+<<<
+
+La forma de utilizarlo consiste en conectarlo con ZXUnCore y, si se dispone de ZXUnGo+, conectarlo detrás. Una vez hecho esto, los cores con soporte de joystick podrán utilizar los joysticks que se conecten al puerto DB9 del addon.
+
+[.text-center]
+image:./img/ZXUnGoPlus_DB9_connected.jpg[pdfwidth=90%]
 
 <<<
 
@@ -543,8 +564,9 @@ image:img/bios5.png[pdfwidth=70%]
 La pantalla de configuración avanzada sirve para modificar los siguientes ajustes:
 
 - Distribución del teclado (Keyb Layout): Ver <<#_teclado,el apartado correspondiente >> para más información)
-- Comportamiento del joystick emulado con el teclado numérico de un teclado PS/2 (Joy Keypad): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek o Fuller
-- Comportamiento de un joystick conectado a una expansión de ZX-Uno (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller o simular las teclas `Q`, `A`, `O`, `P`, `Espacio` y `M`
+- Comportamiento del joystick emulado con el teclado numérico de un teclado PS/2 (Joy Keypad) y del segundo joystick (con ZXUnGo+ DB9 y splitter): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek o Fuller
+- Comportamiento de un joystick conectado a conectado al puerto principal de un ZXUnGo+ DB9 (Joy DB9): Kempston, Sinclair Joystick 1, Sinclair Joystick 2, Protek, Fuller o simular las teclas `Q`, `A`, `O`, `P`, `Espacio` y `M`
+- Activar el segundo joystick (ZXUnGo+ DB9 y splitter). Sólo válido para ZXUnGo+ DB9 con un splitter conectado y para los cores que estén diseñados para soportarlo
 - Salida de vídeo (video): PAL, NTSC o VGA
 - Simulación de línea de exploración (Scanlines): Activas (Enabled) o inactivas (Disabled)
 - Frecuencia horizontal de VGA (Frequency): 50, 51, etc.
@@ -2165,7 +2187,7 @@ El core necesita tener insertada una tarjeta SD con el formato correcto, o si no
 
 === Arcades
 
-Originalmente pensados para el https://www.zxuno.com/forum/viewtopic.php?f=21&t=478[Addon Jamma para ZX-Uno] (para https://es.wikipedia.org/wiki/Japanese_Amusement_Machine_Manufacturers%27_Association[conectar en una máquina recreativa]), se trata de cores de https://es.wikipedia.org/wiki/Arcade[máquinas recreativas (o Arcade)]. Posteriormente también se crearon versiones adaptadas para ser compatibles con joysticks (por ejemplo con el addon VGA+DB9 para ZX-Uno).
+Originalmente pensados para el https://www.zxuno.com/forum/viewtopic.php?f=21&t=478[Addon Jamma para ZX-Uno] (para https://es.wikipedia.org/wiki/Japanese_Amusement_Machine_Manufacturers%27_Association[conectar en una máquina recreativa]), se trata de cores de https://es.wikipedia.org/wiki/Arcade[máquinas recreativas (o Arcade)]. Posteriormente también se crearon versiones adaptadas para ser compatibles con joysticks (por ejemplo con el addon ZXUnGo+ DB9).
 
 Existen principalmente tres tipos:
 
@@ -2993,6 +3015,35 @@ Se puede cargar desde una cinta (u otro dispositivo externo de audio) con el com
 ====
 Es posible utilizar programas como <<#_conversión_a_fichero_de_audio,Audiotap o Comodoro>> con los ficheros `TAP` de cinta de Commodore.
 ====
+
+<<<
+
+=== Flappy Bird
+
+https://es.wikipedia.org/wiki/Flappy_Bird[Flappy Bird] fue un juego para móviles de gran éxito entre 2013 y 2014. El objetivo consiste en controlar un pájaro intentando volar entre filas de tuberías verdes sin tocarse con estas.
+
+Este core ha sido realizado por azesmbog basado en el https://github.com/themaxaboy/Flappy-Bird-Verilog[trabajo de Max Veerapat Kumchom], adaptando su código para la placa AEON Lite al ZX-Uno.
+
+Características principales:
+
+- Sólo salida VGA
+- Sólo se puede controlar usando un joystick
+
+==== Formato de Tarjeta SD
+
+Este core no utiliza la tarjeta SD.
+
+==== Teclado
+
+Este core no utiliza el teclado. Necesita un joystick para usarse.
+
+===== Teclas especiales y botones
+
+Durante la ejecución del core:
+
+- `Joystick Arriba`: Reinicia el juego
+- `Joystick Abajo`: Master Reset
+- `Disparo`: Volar
 
 <<<
 
@@ -4544,7 +4595,7 @@ Así, para modificar la BIOS de un fichero llamado `FLASH.ZX1`, usando la BIOS e
 ...zx123_tool.py -i FLASH.ZX1 -a BIOS,FIRMWARE.ZX1 -m 2
 ----
 
-Existen también opciones para ajustar el tiempo de espera inicial de la BIOS, el core a ejecutar por defecto, o la ROM de Spectrum a utilizar por defecto. Véase la https://github.com/kounch/zx123_tool/#castellano[documentación de la herramienta] para más información.
+Existen también opciones para ajustar el tiempo de espera inicial de la BIOS, el core a ejecutar por defecto, o la ROM de Spectrum a utilizar por defecto. Véase la https://kounch.github.io/zx123_tool/es/manual.html[documentación de la herramienta] para más información.
 
 <<<
 
@@ -4557,7 +4608,7 @@ Para añadir una ROM de Spectrum llamada `48.rom`, poniendo el nombre `Spec48` y
 ...zx123_tool.py -i FLASH.ZX1 -a ROM,5,xdnlh17,Spec48,48.rom
 ----
 
-Véase la https://github.com/kounch/zx123_tool/#castellano[documentación de la herramienta] para ver todas las posibles opciones a la hora de añadir una ROM de Spectrum.
+Véase la https://kounch.github.io/zx123_tool/es/manual.html[documentación de la herramienta] para ver todas las posibles opciones a la hora de añadir una ROM de Spectrum.
 
 Entre los datos que se indican al añadir una ROM, hay una serie de indicadores para definir qué opciones de hardware, etc. se desean habilitar o deshabilitar al cargar esa ROM en concreto, según se puede ver en esta tabla:
 
