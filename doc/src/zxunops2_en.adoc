@@ -233,7 +233,7 @@ In order to install the firmware, a computer is needed (Windows, Mac, Linux).
 - USB serial adapter (FTDI)
 
 [.text-center]
-image:./img/ftdi_usb.jpg[pdfwidth=30%]
+image:./img/ftdi_usb.jpg[scaledwidth=30%]
 
 *Software needed*:
 
@@ -247,7 +247,7 @@ image:./img/ftdi_usb.jpg[pdfwidth=30%]
 Unplug the Arduino board (if needed), and locate all the connections.
 
 [.text-center]
-image:./img/arduinominipro.jpg[pdfwidth=30%]
+image:./img/arduinominipro.jpg[scaledwidth=30%]
 
 Plug the serial adapter with the Arduino board, using this guide:
 

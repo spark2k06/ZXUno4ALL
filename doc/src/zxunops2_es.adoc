@@ -245,7 +245,7 @@ Para poder instalar el firmware, se  necesita un ordenador (Windows, Mac, Linux)
 - Adaptador USB Serie (FTDI)
 
 [.text-center]
-image:./img/ftdi_usb.jpg[pdfwidth=30%]
+image:./img/ftdi_usb.jpg[scaledwidth=30%]
 
 *Software necesario*:
 
@@ -259,7 +259,7 @@ image:./img/ftdi_usb.jpg[pdfwidth=30%]
 Desconectar la placa Arduino (si fuera necesario), e identificar sus conexiones.
 
 [.text-center]
-image:./img/arduinominipro.jpg[pdfwidth=30%]
+image:./img/arduinominipro.jpg[scaledwidth=30%]
 
 Conectar el adaptador serie con la placa Arduino, de la siguiente forma:
 
